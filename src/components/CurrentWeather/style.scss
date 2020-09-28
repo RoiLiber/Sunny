@@ -70,6 +70,7 @@ div.current_weather_wrapper {
   }
   & > div.set_dark_mode {
     justify-content: flex-end;
+    z-index: 1000;
     @include respond-to('large') {
       padding: 25px 75px ;
     }
