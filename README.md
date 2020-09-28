@@ -11,7 +11,7 @@ https://roiliber.github.io/Sunny/
 <div style="display: flex; justify-content: space-around flex-wrap: wrap">
   
   <img src="https://i.ibb.co/pKhGmSh/Capasdture.png" alt="Capasdture" border="0" width="30%">
-  <img src="https://i.ibb.co/vvJVx7P/Captsdsure.png" alt="Captsdsure" border="0" width="70%">
+  <img src="https://i.ibb.co/vvJVx7P/Captsdsure.png" alt="Captsdsure" border="0" width="650%">
   <img src="https://i.ibb.co/xSf4SzF/Captddure.png" alt="Captddure" border="0" width="30%">
   <img src="https://i.ibb.co/vXfkqhC/Captdssure.png" alt="Captdssure" border="0" width="30%">
   <img src="https://i.ibb.co/93jmDy6/Captuberre.png" alt="Captuberre" border="0" width="30%">
