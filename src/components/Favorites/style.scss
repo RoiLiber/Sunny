@@ -60,11 +60,21 @@ div.favorites_wrapper {
     flex-wrap: wrap;
     justify-content: center;
 
-    & > .favorite_icon {
+    & > span {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      color: $dark-yellow;
+      border: thin solid $dark-red;
+      padding: 50px;
+      border-radius: 25px;
+      margin: 10% 20% 25px 20%;
+    }
+    & > div .favorite_icon {
       width: 100%;
       margin: 15px;
-      font-size: 25px;
-      color: $dark-yellow;
+      font-size: 45px;
+      color: $dark-red;
     }
   }
 
@@ -149,8 +159,14 @@ div.favorites_wrapper {
 }
 div.favorites_light_mode {
 
-  & > div.no_favorites_container .favorite_icon {
-    color: $light-red;
+  & > div.no_favorites_container {
+    & > span {
+      color: $light-white;
+      border: thin solid $light-red;
+    }
+    & > div .favorite_icon {
+      color: $light-red;
+    }
   }
   & > div.fav_city_container {
     border: thin solid $light-white;

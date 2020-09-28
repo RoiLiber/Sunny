@@ -9,6 +9,7 @@ import { ROUTES, ERROR_MSG } from '../../consts';
 import { Fade } from "react-reveal";
 import RainEffect from '../UI/RainEffect';
 import LightningEffect from '../UI/Lightning';
+import Pulse from 'react-reveal/Pulse';
 import './style.scss';
 
 function Favorites(props) {
@@ -52,9 +53,13 @@ function Favorites(props) {
         return (
             <div className={'no_favorites_container'}>
                 <span>
-                    There is no favorites cities saved yet, go to the home page search a cite and click her
+                    There is no favorites cities saved yet, go to the home page,
+                    search for a city and click the heart to add it to your favorites list
                 </span>
-                <FavoriteBorderIcon className={`favorite_icon`}/>
+                <Pulse forever duration={750}>
+                    <FavoriteBorderIcon className={`favorite_icon`}/>
+                </Pulse>
+
             </div>
         )
     }

@@ -5,10 +5,10 @@ import WeatherDetails from '../WeatherDetails';
 import './style.scss';
 
 function Forecast(props) {
-  const { cityDetails } = props;
+  const { cityDetails, darkMode } = props;
 
   return (
-      <div className={'forecast_wrapper'}>
+      <div className={`forecast_wrapper ${!darkMode ? 'forecast_light_mode' : ''}`}>
           <div className={'cards'}>
               {cityDetails.forecast.map((item, i) => (
                   <WeatherDetails dayDetails={item} key={uuidv4()} currDay={!i} index={i}/>
@@ -20,6 +20,7 @@ function Forecast(props) {
 
 const mapStateToProps = state => ({
     cityDetails: state.mainReducer.cityDetails,
+    darkMode: state.mainReducer.darkMode,
 });
 
 export default connect(mapStateToProps)(Forecast)
