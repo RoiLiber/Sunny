@@ -89,29 +89,30 @@ function HomePage(props) {
     function renderFavoriteIcon() {
         const isCityInFav = !!favoriteCities.find(city => city.key === props.city.key);
 
-        return isCityInFav && !isError ? <Favorite
-            className={`favorite_icon favorite`}
-            onClick={() => {
-                if (!isCityInFav) {
-                    props.setFavoriteCities(props.city)
-                }
-                else {
-                    props.removeFavoriteCity(key)
-                }
-            }}
-        />
-        :  !isError ? <FavoriteBorderIcon
-                className={`favorite_icon`}
-                onClick={() => {
-                    if (!isCityInFav) {
-                        props.setFavoriteCities(props.city)
-                    }
-                    else {
-                        props.removeFavoriteCity(key)
-                    }
-                }}
-            />
-            : null
+        return isError ? null
+            : isCityInFav
+                ? <Favorite
+                    className={`favorite_icon favorite`}
+                    onClick={() => {
+                        if (!isCityInFav) {
+                            props.setFavoriteCities(props.city)
+                        }
+                        else {
+                            props.removeFavoriteCity(key)
+                        }
+                    }}
+                />
+                : <FavoriteBorderIcon
+                    className={`favorite_icon`}
+                    onClick={() => {
+                        if (!isCityInFav) {
+                            props.setFavoriteCities(props.city)
+                        }
+                        else {
+                            props.removeFavoriteCity(key)
+                        }
+                    }}
+                />
     }
 
     function weatherIcons(weatherText) {
