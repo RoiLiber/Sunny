@@ -20,7 +20,7 @@ export {
   ROUTES,
   ERROR_MSG,
   SEARCH_ERROR_MSG,
-  API_KEY
+  API_KEY,
 }
 
 ////// for development purposes only
@@ -116,6 +116,7 @@ export {
 //     },
 //   },
 // ];
+
 // const searchCitisRespance = [
 //   {
 //     AdministrativeArea: {ID: "BE", LocalizedName: "Berlin"},
