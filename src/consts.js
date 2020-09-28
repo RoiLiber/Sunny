@@ -5,7 +5,7 @@ const ERROR_MSG = `Sorry, unable to fetch the weather, maybe it's to cloudy` ;
 const SEARCH_ERROR_MSG = `Sorry, unable to fetch the cities list, maybe it's to cloudy` ;
 
 const ROUTES = {
-  home: '/',
+  home: '/home',
   favorites: '/favorites',
 };
 
