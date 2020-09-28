@@ -15,7 +15,7 @@ import LightningEffect from '../UI/Lightning';
 import './style.scss';
 
 function HomePage(props) {
-    const { city: { key = '', label }, favoriteCities, metric, darkMode, requestError } = props;
+    const { city: { key = '', label }, favoriteCities, metric, darkMode } = props;
     const [isLoader, setIsLoader] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -70,7 +70,7 @@ function HomePage(props) {
                         {RainEffect(3)}
                         {LightningEffect()}
                     </div>
-                    <div className={'error_msg'}>{requestError || ERROR_MSG}</div>
+                    <div className={'error_msg'}>{ERROR_MSG}</div>
                     <Button
                         variant="text"
                         onClick={getCityWeather}
@@ -186,7 +186,6 @@ const mapStateToProps = state => ({
     favoriteCities: state.mainReducer.favoriteCities,
     metric: state.mainReducer.metric,
     darkMode: state.mainReducer.darkMode,
-    requestError: state.mainReducer.requestError
 });
 
 export default connect(mapStateToProps, { setCityDetails, setFavoriteCities, removeFavoriteCity })(HomePage)

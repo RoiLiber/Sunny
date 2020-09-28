@@ -22,19 +22,6 @@ const setDarkMode = bool => ({
     bool
 });
 
-const setRequestError = str => {
-    console.log('message', str)
-    return ({
-        type: types.requestError,
-        str
-    })
-}
-
-// const setRequestError = str => ({
-//     type: types.requestError,
-//     str
-// });
-
 const setFavoriteCities = value => {
     const { favoriteCities } = store.getState().mainReducer;
     const newFavList = [...favoriteCities, value];
@@ -64,5 +51,4 @@ export {
     removeFavoriteCity,
     setTampMetric,
     setDarkMode,
-    setRequestError
 }

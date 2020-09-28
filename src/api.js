@@ -1,21 +1,11 @@
 import _get from 'lodash/get';
 import store from './store';
-import { setCityDetails, setRequestError } from './actions/mainActions';
+import { setCityDetails } from './actions/mainActions';
 import { weatherUrl, imageUrl, API_KEY } from './consts';
 
 async function fetchCityWeather(key) {
   const response = await fetch(`${weatherUrl}/currentconditions/v1/${key}?apikey=${API_KEY}`);
   const currentWeatherDetails = await response.json();
-
-  // const errMsg = currentWeatherDetails.Message;
-
-  // if (errMsg === 'The allowed number of requests has been exceeded.') {
-  //   console.log(errMsg)
-  //   store.dispatch(setRequestError('requestErrorMsg', 'hi'))
-  // } else {
-  //   store.dispatch(setRequestError('setRequestError', ''))
-  // }
-
   const { WeatherText, Temperature, WeatherIcon } = currentWeatherDetails[0] || [];
   const weatherImage = WeatherIcon && `${imageUrl}/${WeatherIcon.toString().padStart(2, '0')}-s.png`;
 

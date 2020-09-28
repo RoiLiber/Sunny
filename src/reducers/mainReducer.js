@@ -14,7 +14,6 @@ const initialState = Immutable({
     favoriteCities: JSON.parse(favoritesCity) || [],
     metric: true,
     darkMode: true,
-    requestErrorMsg: ''
 });
 
 export default handleActions({
@@ -23,5 +22,4 @@ export default handleActions({
     [types.updateFavorites]: (state, { favorites }) => state.set('favoriteCities', favorites),
     [types.tampToggle]: (state, { bool }) => state.setIn(['metric'], bool),
     [types.setDarkMode]: (state, { bool }) => state.setIn(['darkMode'], bool),
-    [types.requestError]: (state, { errMsg }) => state.setIn(['requestErrorMsg'], errMsg)
 }, initialState)

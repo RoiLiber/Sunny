@@ -6,7 +6,6 @@ const actionTypes = {
     updateFavorites: 'UPDATE_FAVORITES',
     tampToggle: 'TAMP_TOGGLE',
     setDarkMode: 'SET_DARK_MODE',
-    requestError: 'REQUEST_ERROR'
 };
 
 export default actionTypes;
