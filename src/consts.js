@@ -11,7 +11,7 @@ const ROUTES = {
   favorites: '/favorites',
 };
 
-const API_KEY = process.env.REACT_APP_API_KEY || 'saWWFAfScoxhIexu7ayAU90tvkAvcGJz';
+const API_KEY = process.env.REACT_APP_API_KEY || '7va3PZ339tY4Gph5Y6kHRACPcRdfbdiT';
 
 export {
   weatherUrl,
@@ -30,7 +30,7 @@ export {
 // const API_KEY = process.env.REACT_APP_API_KEY || '3585775f387b0d0cba6c5b3dc41b8167';
 
 // one more key for development purposes
-// const API_KEY = process.env.REACT_APP_API_KEY || '7va3PZ339tY4Gph5Y6kHRACPcRdfbdiT';
+// const API_KEY = process.env.REACT_APP_API_KEY || 'saWWFAfScoxhIexu7ayAU90tvkAvcGJz';
 
 ////// API res const for development purposes only
 

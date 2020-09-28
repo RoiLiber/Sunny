@@ -22,10 +22,18 @@ const setDarkMode = bool => ({
     bool
 });
 
-const setRequestError = str => ({
-    type: types.requestError,
-    str
-});
+const setRequestError = str => {
+    console.log('message', str)
+    return ({
+        type: types.requestError,
+        str
+    })
+}
+
+// const setRequestError = str => ({
+//     type: types.requestError,
+//     str
+// });
 
 const setFavoriteCities = value => {
     const { favoriteCities } = store.getState().mainReducer;

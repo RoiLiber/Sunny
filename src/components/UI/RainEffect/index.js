@@ -416,8 +416,9 @@ export default function Rain(level) {
                 {/*style="left:537px;top:346px"></i><i style="left:476px;top:-127px"></i><i*/}
                 {/*style="left:494px;top:1218px"></i><i style="left:1112px;top:-977px"></i><i*/}
                 {/*style="left:80px;top:-546px"></i><i style="left:1571px;top:1378px"></i><i*/}
-                {/*style="left:764px;top:75px"></i><i style="left:505px;top:876px"></i><i style="left:810px;top:412px"></i><i*/}
-                {/*style="left:18px;top:350px"></i><i style="left:925px;top:-157px"></i><i*/}
+                {/*style="left:764px;top:75px"></i><i style="left:505px;top:876px"></i>
+                <i style="left:810px;top:412px"></i><i*/}{/*style="left:18px;top:350px">
+                </i><i style="left:925px;top:-157px"></i><i*/}
                 {/*style="left:715px;top:269px"></i><i style="left:1656px;top:1165px"></i><i*/}
                 {/*style="left:1397px;top:261px"></i><i style="left:1247px;top:970px"></i><i*/}
                 {/*style="left:163px;top:1095px"></i><i style="left:880px;top:-215px"></i><i*/}
