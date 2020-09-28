@@ -84,8 +84,8 @@ div.current_weather_wrapper {
       height: 35px;
     }
     & > div button.active {
-      background-color: $dark-yellow;
-      color: $dark-background;
+      border: thin solid $dark-teal;
+      color: $dark-teal;
       font-weight: bold;
     }
   }
@@ -112,8 +112,7 @@ div.current_weather_light_mode {
       color: $light-white;
     }
     & > div button.active {
-      background-color: $light-white;
-      color: $light-teal;
+      border: thin solid $light-white;
     }
   }
 }

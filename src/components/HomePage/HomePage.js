@@ -15,7 +15,7 @@ import LightningEffect from '../UI/Lightning';
 import './style.scss';
 
 function HomePage(props) {
-    const { city: { key = '', label }, favoriteCities, metric, darkMode } = props;
+    const { city: { key = '', label }, favoriteCities, metric, darkMode, requestError } = props;
     const [isLoader, setIsLoader] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -33,7 +33,7 @@ function HomePage(props) {
                 setIsLoader(false)
             }
         })()
-    }, [metric]);
+    }, [metric, key]);
 
     function getCityWeather() {
 
@@ -66,7 +66,11 @@ function HomePage(props) {
         if (isError) {
             return (
                 <div className={'error_wrapper'}>
-                    <div className={'error_msg'}>{ERROR_MSG}</div>
+                    <div className={'storm'}>
+                        {RainEffect(3)}
+                        {LightningEffect()}
+                    </div>
+                    <div className={'error_msg'}>{requestError || ERROR_MSG}</div>
                     <Button
                         variant="text"
                         onClick={getCityWeather}
@@ -85,7 +89,7 @@ function HomePage(props) {
     function renderFavoriteIcon() {
         const isCityInFav = !!favoriteCities.find(city => city.key === props.city.key);
 
-        return isCityInFav ? <Favorite
+        return isCityInFav && !isError ? <Favorite
             className={`favorite_icon favorite`}
             onClick={() => {
                 if (!isCityInFav) {
@@ -96,7 +100,7 @@ function HomePage(props) {
                 }
             }}
         />
-        :  <FavoriteBorderIcon
+        :  !isError ? <FavoriteBorderIcon
                 className={`favorite_icon`}
                 onClick={() => {
                     if (!isCityInFav) {
@@ -107,6 +111,7 @@ function HomePage(props) {
                     }
                 }}
             />
+            : null
     }
 
     function weatherIcons(weatherText) {
@@ -179,7 +184,8 @@ const mapStateToProps = state => ({
     cityDetails: state.mainReducer.cityDetails,
     favoriteCities: state.mainReducer.favoriteCities,
     metric: state.mainReducer.metric,
-    darkMode: state.mainReducer.darkMode
+    darkMode: state.mainReducer.darkMode,
+    requestError: state.mainReducer.requestError
 });
 
 export default connect(mapStateToProps, { setCityDetails, setFavoriteCities, removeFavoriteCity })(HomePage)

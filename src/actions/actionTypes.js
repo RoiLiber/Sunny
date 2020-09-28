@@ -5,7 +5,8 @@ const actionTypes = {
     removeFavoriteCity: 'REMOVE_FAVORITE_CITY',
     updateFavorites: 'UPDATE_FAVORITES',
     tampToggle: 'TAMP_TOGGLE',
-    setDarkMode: 'SET_DARK_MODE'
+    setDarkMode: 'SET_DARK_MODE',
+    requestError: 'REQUEST_ERROR'
 };
 
 export default actionTypes;

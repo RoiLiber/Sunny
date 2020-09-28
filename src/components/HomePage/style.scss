@@ -37,16 +37,28 @@ div.home_page {
 
     & > div.error_wrapper {
       position: relative;
-      bottom: 100px;
+      width: 100%;
+      top: -20vh;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 10%;
+
+      & > div.storm {
+        width: 100%;
+        position: relative;
+        top: -21vh;
+      }
 
       & > div.error_msg {
         font-size: 25px;
         color: $dark-red;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        border: thin solid $dark-red;
+        padding: 50px 25px;
+        border-radius: 25px;
+        margin: 10% 20% 25px 20%;
       }
 
       & > button {
@@ -54,6 +66,7 @@ div.home_page {
         border: thin solid $dark-teal;
         margin: 35px;
         padding: 5px 15px;
+        z-index: 1000;
       }
     }
   }

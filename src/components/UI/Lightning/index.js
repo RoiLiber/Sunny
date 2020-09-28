@@ -22,7 +22,6 @@ export default function Lightning() {
         const FADE_INCREMENT = 0.013; // 0 - 0.02
 
         const LIGHTNING_CHANCE = 0.03;
-        const SHEET_CHANCE = 0.2;
         const BRANCH_CHANCE = 0.01;
         const FLICKER_CHANCE = 0.023;
         const BRANCH_BRANCH_CHANCE = 0.90;
@@ -58,7 +57,6 @@ export default function Lightning() {
         let stageWidth = 0;
         let stageHeight = 0;
         let previousTimestamp = getTimestamp();
-        let previousRender = getTimestamp();
 
         const loop = () => {
             ctx && ctx.clearRect(0, 0, stageWidth, stageHeight);
@@ -229,6 +227,7 @@ export default function Lightning() {
 
                     this.clouds.map((cloud) => {
                         cloud.alpha = random(0.6) + 0.3;
+                        return cloud.alpha;
                     });
                 }
 
@@ -247,10 +246,10 @@ export default function Lightning() {
                 ctx && (ctx.strokeStyle = colour);
                 ctx && (ctx.lineWidth = this.width);
 
-                //if (this.flickerCount === 0) {
-                //  ctx.shadowBlur = this.width * 3;
-                //  ctx.shadowColor = colour;
-                //}
+                if (this.flickerCount === 0) {
+                    ctx && (ctx.shadowBlur = this.width * 3);
+                    ctx && (ctx.shadowColor = colour);
+                }
 
                 this.paths.forEach((path) => {
                     ctx && ctx.lineTo(path.x, path.y);

@@ -7,6 +7,8 @@ import { setCity, removeFavoriteCity } from '../../actions/mainActions';
 import { fetchCityWeather } from '../../api';
 import { ROUTES, ERROR_MSG } from '../../consts';
 import { Fade } from "react-reveal";
+import RainEffect from '../UI/RainEffect';
+import LightningEffect from '../UI/Lightning';
 import './style.scss';
 
 function Favorites(props) {
@@ -29,7 +31,7 @@ function Favorites(props) {
                     ...acc,
                     [favoriteCities[i].key]: info,
                 }), {});
-                if (favoriteCities.length && !Object.keys(citiesInfo).length) {
+                if ((favoriteCities.length && !Object.keys(citiesInfo).length) || !Object.keys(citiesInfo).description) {
                     throw new Error()
                 }
                 setFavCitiesInfo(citiesInfo);
@@ -50,7 +52,7 @@ function Favorites(props) {
         return (
             <div className={'no_favorites_container'}>
                 <span>
-                  There is no favorites cities saved yet, go to the home page search a cite and click her
+                    There is no favorites cities saved yet, go to the home page search a cite and click her
                 </span>
                 <FavoriteBorderIcon className={`favorite_icon`}/>
             </div>
@@ -61,6 +63,7 @@ function Favorites(props) {
         if (!favoriteCities.length) {
             return renderNoFavorites()
         }
+
         return favoriteCities.map((city, index) => {
             const tamp = metric ? favCitiesInfo[city.key].tempC : favCitiesInfo[city.key].tempF;
 
@@ -109,6 +112,10 @@ function Favorites(props) {
         if (isError) {
             return (
                 <div className={'error_wrapper'}>
+                    <div className={'storm'}>
+                        {RainEffect(3)}
+                        {LightningEffect()}
+                    </div>
                     <div className={'error_msg'}>{ERROR_MSG}</div>
                     <Button
                         variant="text"

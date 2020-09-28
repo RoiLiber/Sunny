@@ -1,6 +1,6 @@
 import _get from 'lodash/get';
 import store from './store';
-import { setCityDetails } from './actions/mainActions';
+import { setCityDetails, setRequestError } from './actions/mainActions';
 import { weatherUrl, imageUrl, API_KEY } from './consts';
 
 async function fetchCityWeather(key) {
