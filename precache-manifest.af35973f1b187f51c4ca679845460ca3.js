@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7f7c6ffda7d5e7e5d293c88c49804856",
+    "revision": "015895e072c812770815211226560e56",
     "url": "/Sunny/index.html"
   },
   {
-    "revision": "f9f35624dd0a71ca6d95",
-    "url": "/Sunny/static/css/main.33f979da.chunk.css"
+    "revision": "dbbae212497c9edb3733",
+    "url": "/Sunny/static/css/main.2a96d231.chunk.css"
   },
   {
-    "revision": "a078264d0e571642dc37",
-    "url": "/Sunny/static/js/2.40e9b86d.chunk.js"
+    "revision": "ba76c9afd251315f13a9",
+    "url": "/Sunny/static/js/2.f94f5179.chunk.js"
   },
   {
     "revision": "1cad250318cbbd3f8b3f9b81a91b3ff6",
-    "url": "/Sunny/static/js/2.40e9b86d.chunk.js.LICENSE.txt"
+    "url": "/Sunny/static/js/2.f94f5179.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f9f35624dd0a71ca6d95",
-    "url": "/Sunny/static/js/main.0c74ca73.chunk.js"
+    "revision": "dbbae212497c9edb3733",
+    "url": "/Sunny/static/js/main.45da72f9.chunk.js"
   },
   {
     "revision": "f265c64ab8b710c6045d",
