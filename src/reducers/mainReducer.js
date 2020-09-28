@@ -4,6 +4,8 @@ import { DEFAULT_LOCATION } from '../consts';
 import Immutable from 'seamless-immutable';
 
 const favoritesCity = localStorage.getItem('favorites');
+const metricPreferences = localStorage.getItem('metricPreferences');
+const darkModePreferences = localStorage.getItem('darkModePreferences');
 
 const initialState = Immutable({
     city: DEFAULT_LOCATION || {},
@@ -12,8 +14,8 @@ const initialState = Immutable({
         forecast: [],
     },
     favoriteCities: JSON.parse(favoritesCity) || [],
-    metric: true,
-    darkMode: true,
+    metric: JSON.parse(metricPreferences) === null ? true : JSON.parse(metricPreferences),
+    darkMode: JSON.parse(darkModePreferences) === null ? true : JSON.parse(darkModePreferences),
 });
 
 export default handleActions({

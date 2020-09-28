@@ -12,15 +12,21 @@ const setCityDetails = (key, value) => ({
     value
 });
 
-const setTampMetric = bool => ({
-    type: types.tampToggle,
-    bool
-});
+const setTampMetric = bool => {
+    localStorage.setItem('metricPreferences', JSON.stringify(bool));
+    return ({
+        type: types.tampToggle,
+        bool
+    })
+};
 
-const setDarkMode = bool => ({
-    type: types.setDarkMode,
-    bool
-});
+const setDarkMode = bool => {
+    localStorage.setItem('darkModePreferences', JSON.stringify(bool));
+    return ({
+        type: types.setDarkMode,
+        bool
+    })
+};
 
 const setFavoriteCities = value => {
     const { favoriteCities } = store.getState().mainReducer;
