@@ -13,18 +13,16 @@ export default function Rain(level) {
                     <i style={{left: '659px', top: '1180px'}}/><i style={{left: '648px', top: '-408px'}}/>
                     <i style={{left: '844px', top: '10px'}}/><i style={{left: '662px', top: '-1098px'}}/>
                     <i style={{left: '471px', top: '55px'}}/><i style={{left: '811px', top: '-752px'}}/>
-                </Fragment>}
-                {level >= 2 && <Fragment>
                     <i style={{left: '281px', top: '1300px'}}/><i style={{left: '117px', top: '153px'}}/>
                     <i style={{left: '579px', top: '942px'}}/><i style={{left: '657px', top: '-977px'}}/>
                     <i style={{left: '1757px', top: '808px'}}/><i style={{left: '1334px', top: '116px'}}/>
+                </Fragment>}
+                {level >= 2 && <Fragment>
                     <i style={{left: '1089px', top: '-59px'}}/><i style={{left: '615px', top: '661px'}}/>
                     <i style={{left: '1303px', top: '-163px'}}/><i style={{left: '60px', top: '789px'}}/>
                     <i style={{left: '1038px', top: '-686px'}}/><i style={{left: '920px', top: '1190px'}}/>
                     <i style={{left: '1174px', top: '-21px'}}/><i style={{left: '1031px', top: '-762px'}}/>
                     <i style={{left: '1541px', top: '432px'}}/><i style={{left: '72px', top: '286px'}}/>
-                </Fragment>}
-                {level === 3 && <Fragment>
                     <i style={{left: '1746px', top: '34px'}}/><i style={{left: '900px', top: '566px'}}/>
                     <i style={{left: '1045px', top: '-666px'}}/><i style={{left: '224px', top: '370px'}}/>
                     <i style={{left: '206px', top: '-904px'}}/><i style={{left: '1586px', top: '-521px'}}/>
@@ -33,35 +31,39 @@ export default function Rain(level) {
                     <i style={{left: '1474px', top: '380px'}}/><i style={{left: '1363px', top: '748px'}}/>
                     <i style={{left: '35px', top: '1337px'}}/><i style={{left: '1029px', top: '263px'}}/>
                     <i style={{left: '360px', top: '443px'}}/><i style={{left: '1343px', top: '825px'}}/>
+                    <i style={{left: '1731px', top: '1009px'}}/><i style={{left: '1613px', top: '442px'}}/>
+                    <i style={{left: '333px', top: '-920px'}}/><i style={{left: '1202px', top: '-815px'}}/>
+                    <i style={{left: '1081px', top: '126px'}}/><i style={{left: '1820px', top: '381px'}}/>
+                    <i style={{left: '1687px', top: '-234px'}}/><i style={{left: '1064px', top: '1364px'}}/>
+                    <i style={{left: '1601px', top: '518px'}}/><i style={{left: '545px', top: '105px'}}/>
+                    <i style={{left: '1198px', top: '-508px'}}/><i style={{left: '61px', top: '658px'}}/>
+                    <i style={{left: '73px', top: '1197px'}}/><i style={{left: '774px', top: '40px'}}/>
+                </Fragment>}
+                {level === 3 && <Fragment>
+                    <i style={{left: '1680px', top: '483px'}}/><i style={{left: '1742px', top: '1118px'}}/>
+                    <i style={{left: '369px', top: '-825px'}}/><i style={{left: '307px', top: '-557px'}}/>
+                    <i style={{left: '1641px', top: '973px'}}/><i style={{left: '1273px', top: '1015px'}}/>
+                    <i style={{left: '1727px', top: '1334px'}}/><i style={{left: '1390px', top: '-637px'}}/>
+                    <i style={{left: '1693px', top: '1164px'}}/><i style={{left: '1394px', top: '-687px'}}/>
+                    <i style={{left: '363px', top: '300px'}}/><i style={{left: '492px', top: '965px'}}/>
+                    <i style={{left: '1507px', top: '212px'}}/><i style={{left: '201px', top: '878px'}}/>
+                    <i style={{left: '1047px', top: '-646px'}}/><i style={{left: '1796px', top: '1045px'}}/>
+                    <i style={{left: '10px', top: '1px'}}/><i style={{left: '235px', top: '155px'}}/>
+                    <i style={{left: '863px', top: '1131px'}}/><i style={{left: '1415px', top: '802px'}}/>
+                    <i style={{left: '605px', top: '1220px'}}/><i style={{left: '1557px', top: '484px'}}/>
+                    <i style={{left: '906px', top: '563px'}}/><i style={{left: '1087px', top: '582px'}}/>
+                    <i style={{left: '14px', top: '-726px'}}/><i style={{left: '226px', top: '-883px'}}/>
+                    <i style={{left: '311px', top: '-215px'}}/><i style={{left: '1401px', top: '-679px'}}/>
+                    <i style={{left: '817px', top: '1245px'}}/><i style={{left: '1095px', top: '992px'}}/>
+                    <i style={{left: '1092px', top: '275px'}}/><i style={{left: '1630px', top: '49px'}}/>
+                    <i style={{left: '516px', top: '-335px'}}/><i style={{left: '238px', top: '-675px'}}/>
+                    <i style={{left: '286px', top: '690px'}}/><i style={{left: '763px', top: '496px'}}/>
+                    <i style={{left: '527px', top: '667px'}}/><i style={{left: '1626px', top: '-142px'}}/>
+                    <i style={{left: '1691px', top: '-71px'}}/><i style={{left: '419px', top: '-189px'}}/>
                 </Fragment>}
 
-                {/*style="left:1731px;top:1009px"></i><i style="left:1613px;top:442px"></i><i*/}
-                {/*style="left:333px;top:-920px"></i><i style="left:1202px;top:-815px"></i><i*/}
-                {/*style="left:1081px;top:126px"></i><i style="left:1820px;top:381px"></i><i*/}
-                {/*style="left:1687px;top:-234px"></i><i style="left:1064px;top:1364px"></i><i*/}
-                {/*style="left:1601px;top:518px"></i><i style="left:545px;top:105px"></i><i*/}
-                {/*style="left:1198px;top:-508px"></i><i style="left:61px;top:658px"></i><i*/}
-                {/*style="left:73px;top:1197px"></i><i style="left:774px;top:40px"></i><i*/}
-                {/*style="left:1680px;top:483px"></i><i style="left:1742px;top:1118px"></i><i*/}
-                {/*style="left:369px;top:-825px"></i><i style="left:307px;top:-557px"></i><i*/}
-                {/*style="left:1641px;top:973px"></i><i style="left:1273px;top:1015px"></i><i*/}
-                {/*style="left:1727px;top:1334px"></i><i style="left:1390px;top:-637px"></i><i*/}
-                {/*style="left:1693px;top:1164px"></i><i style="left:1394px;top:-687px"></i><i*/}
-                {/*style="left:363px;top:300px"></i><i style="left:492px;top:965px"></i><i*/}
-                {/*style="left:1507px;top:212px"></i><i style="left:201px;top:878px"></i><i*/}
-                {/*style="left:1047px;top:-646px"></i><i style="left:1796px;top:1045px"></i><i*/}
-                {/*style="left:10px;top:1px"></i><i style="left:235px;top:155px"></i><i*/}
-                {/*style="left:863px;top:1131px"></i><i style="left:1415px;top:802px"></i><i*/}
-                {/*style="left:605px;top:1220px"></i><i style="left:1557px;top:484px"></i><i*/}
-                {/*style="left:906px;top:563px"></i><i style="left:1087px;top:582px"></i><i*/}
-                {/*style="left:14px;top:-726px"></i><i style="left:226px;top:-883px"></i><i*/}
-                {/*style="left:311px;top:-215px"></i><i style="left:1401px;top:-679px"></i><i*/}
-                {/*style="left:817px;top:1245px"></i><i style="left:1095px;top:992px"></i><i*/}
-                {/*style="left:1092px;top:275px"></i><i style="left:1630px;top:49px"></i><i*/}
-                {/*style="left:516px;top:-335px"></i><i style="left:238px;top:-675px"></i><i*/}
-                {/*style="left:286px;top:690px"></i><i style="left:763px;top:496px"></i><i*/}
-                {/*style="left:527px;top:667px"></i><i style="left:1626px;top:-142px"></i><i*/}
-                {/*style="left:1691px;top:-71px"></i><i style="left:419px;top:-189px"></i><i*/}
+                {/*// for more rain:*/}
+
                 {/*style="left:758px;top:-455px"></i><i style="left:1618px;top:-910px"></i><i*/}
                 {/*style="left:147px;top:335px"></i><i style="left:778px;top:317px"></i><i*/}
                 {/*style="left:1296px;top:293px"></i><i style="left:1836px;top:494px"></i><i*/}

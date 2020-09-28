@@ -52,13 +52,15 @@ div.home_page {
       & > div.error_msg {
         font-size: 25px;
         color: $dark-red;
-        width: 100%;
         display: flex;
         justify-content: center;
         border: thin solid $dark-red;
         padding: 50px 25px;
         border-radius: 25px;
         margin: 10% 20% 25px 20%;
+        @include respond-to('large') {
+          margin: 10% 30% 25px 30%;
+        }
       }
 
       & > button {
