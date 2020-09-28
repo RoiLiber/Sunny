@@ -1,0 +1,71 @@
+@import "../../styles/colorsConfig";
+@import "../../styles/mixins";
+
+div.header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+  background-color: $dark-background;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-size: 25px;
+  color: $dark-yellow;
+  border-bottom: thin solid $dark-teal;
+  border-radius: 0 0 10px 10px;
+  @include respond-to('medium') {
+    font-size: 30px;
+  }
+
+  & > div.logo_wrapper {
+    display: flex;
+    align-items: center;
+
+    & > span.logo {
+      margin-left: 15px;
+    }
+    & > img {
+      width: 45px;
+    }
+  }
+
+  & > div.app_nav_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > a {
+      margin: 0 5px;
+
+      & > button {
+        font-size: 11px;
+        color: $dark-teal;
+        padding: 2px 5px;
+        font-weight: bold;
+        @include respond-to('medium') {
+          font-size: 15px;
+          padding: 5px 10px;
+        }
+      }
+      & > button.active {
+        background-color: $dark-green;
+        color: $dark-background;
+      }
+    }
+  }
+}
+div.header_light_mode {
+  background-color: $light-white;
+  color: $light-teal;
+
+  & > div.app_nav_buttons a button {
+    color: $light-teal;
+  }
+  & > div.app_nav_buttons a button.active {
+    background-color: $light-teal;
+    color: $light-white;
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../styles/colorsConfig";
+
+div.forecast_wrapper {
+  display: flex;
+  width: 100%;
+
+  & > div.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}

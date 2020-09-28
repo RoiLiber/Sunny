@@ -1,0 +1,118 @@
+@import "../../styles/colorsConfig";
+@import "../../styles/mixins";
+
+div.current_weather_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  color: $dark-teal;
+
+  & > div.cityName {
+    width: 100%;
+    display: flex;
+    font-size: 25px;
+    text-align: left;
+    padding: 0 20px;
+    font-weight: bold;
+    @include respond-to('medium') {
+      font-size: 35px;
+    }
+    @include respond-to('large') {
+      font-size: 55px;
+    }
+  }
+  & > div.description {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    @include respond-to('medium') {
+      font-size: 25px;
+    }
+    @include respond-to('large') {
+      font-size: 35px;
+    }
+  }
+  & > div.temp_icon_wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    & > div.degree {
+      font-size: 35px;
+
+      & > span.degree_symbol {
+        font-size: 25px;
+      }
+      @include respond-to('large') {
+        font-size: 45px;
+      }
+    }
+  }
+  & > div.set_tamp_type, div.set_dark_mode {
+    width: 50%;
+    display: flex;
+    padding: 25px 15px;
+
+    & > div button {
+      background-color: $dark-background;
+      color: $dark-yellow;
+      border-radius: 10px;
+      border: none;
+      font-size: 12px;
+      height: 35px;
+    }
+    & > div button.active {
+      background-color: $dark-yellow;
+      color: $dark-background;
+      font-weight: bold;
+    }
+  }
+  & > div.set_dark_mode {
+    justify-content: flex-end;
+    @include respond-to('large') {
+      padding: 25px 75px ;
+    }
+
+    & > div button {
+      background-color: $dark-background;
+      color: $dark-yellow;
+      border-radius: 10px;
+      border: none;
+      font-size: 12px;
+      height: 35px;
+    }
+    & > div button.active {
+      background-color: $dark-yellow;
+      color: $dark-background;
+      font-weight: bold;
+    }
+  }
+}
+
+div.current_weather_light_mode {
+  color: $light-white;
+
+  & > div.set_tamp_type, div.set_dark_mode {
+
+    & > div button {
+      background-color: $light-teal;
+      color: $light-white;
+    }
+    & > div button.active {
+      background-color: $light-white;
+      color: $light-teal;
+    }
+  }
+  & > div.set_dark_mode {
+
+    & > div button {
+      background-color: $light-teal;
+      color: $light-white;
+    }
+    & > div button.active {
+      background-color: $light-white;
+      color: $light-teal;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../styles/colorsConfig";
+@import "../../styles/mixins";
+
+div.auto_complete {
+  height: 75px !important;
+  z-index: 1000;
+
+  & > div {
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+    width: 220px;
+    @include respond-to('medium') {
+      width: 320px;
+    }
+
+    & > div {
+      color: $light-yellow;
+
+      & > div button{
+        color: $dark-teal !important;
+      }
+    }
+    & > p {
+      color: $light-red;
+    }
+  }
+}
+
+div.light_mode {
+  border-bottom: none !important;
+
+  & > div div {
+    background-color: $light-green;
+    color: $dark-background;
+    font-weight: bold;
+
+    & > div button{
+      color: $light-red !important;
+    }
+  }
+}

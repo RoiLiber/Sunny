@@ -1,0 +1,90 @@
+@import "../../styles/colorsConfig";
+@import "../../styles/mixins";
+
+div.card_wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-top: thin solid $dark-teal;
+  margin: 0 10px;
+  font-size: 15px;
+  padding: 7px 15px;
+  z-index: 1000;
+  @include respond-to('web') {
+    min-height: 75px;
+  }
+  @include respond-to('large') {
+    border-bottom: thin solid $dark-teal;
+    border-radius: 15px;
+    margin: 25px;
+    flex-wrap: wrap;
+    width: 15%;
+    height: 175px;
+  }
+
+  & > div.day_name {
+    width: 100%;
+    display: flex;
+
+    @include respond-to('web') {
+      font-size: 20px;
+    }
+    @include respond-to('medium') {
+      font-size: 25px;
+    }
+    @include respond-to('large') {
+      width: 40%;
+    }
+  }
+  & > div.today {
+    font-weight: bold;
+    color: $dark-teal;
+  }
+  & > div.day_tamp {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include respond-to('large') {
+      justify-content: center;
+    }
+
+    & > span.low_tamp_symbol, span.high_tamp_symbol {
+      margin: 7px;
+      color: #fff;
+    }
+    & span.tamp_symbol {
+      font-size: 15px;
+    }
+
+    @include respond-to('web') {
+      font-size: 20px;
+    }
+    @include respond-to('medium') {
+      font-size: 25px;
+    }
+  }
+}
+div.card_wrapper:hover {
+  @include respond-to('medium') {
+    background-color: rgba($dark-green, 0.5);
+  }
+}
+
+div.card_light_mode {
+  border-top: thin solid $light-white;
+  @include respond-to('large') {
+    border-bottom: thin solid $light-white;
+  }
+
+  & > div.today {
+    font-weight: bold;
+    color: $light-yellow;
+  }
+
+  & > div.day_tamp {
+    color: $light-yellow;
+  }
+}

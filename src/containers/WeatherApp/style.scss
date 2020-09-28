@@ -1,0 +1,10 @@
+@import "../../styles/colorsConfig";
+
+div.weather_container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $dark-background;
+}
+div.weather_container_light_mode {
+  background-color: $light-teal;
+}
