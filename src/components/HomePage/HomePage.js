@@ -116,6 +116,7 @@ function HomePage(props) {
     }
 
     function weatherIcons(weatherText) {
+
         switch (weatherText) {
             case 'Hazy Sunshine':
             case 'Intermittent Clouds':
@@ -147,8 +148,10 @@ function HomePage(props) {
                 </Fragment>
             }
             case 'T-Storms':
+            case 'Thunderstorm':
             case 'Mostly Cloudy w/ T-Storms':
             case 'Partly Sunny w/ T-Storms': {
+
                 return <Fragment>
                     {RainEffect(3)}
                     {LightningEffect()}

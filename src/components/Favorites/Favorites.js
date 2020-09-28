@@ -33,7 +33,7 @@ function Favorites(props) {
                     [favoriteCities[i].key]: info,
                 }), {});
 
-                if ((favoriteCities.length && !Object.keys(citiesInfo).length) || (favoriteCities.length && !Object.keys(citiesInfo).description)) {
+                if (favoriteCities.length && !Object.keys(citiesInfo).length) {
                     throw new Error()
                 }
                 setFavCitiesInfo(citiesInfo);
