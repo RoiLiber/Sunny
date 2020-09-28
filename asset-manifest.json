@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Snny/static/css/main.7b2ac3e8.chunk.css",
+    "main.js": "/Snny/static/js/main.6483cf75.chunk.js",
+    "main.js.map": "/Snny/static/js/main.6483cf75.chunk.js.map",
+    "runtime-main.js": "/Snny/static/js/runtime-main.8969bc3a.js",
+    "runtime-main.js.map": "/Snny/static/js/runtime-main.8969bc3a.js.map",
+    "static/js/2.40e9b86d.chunk.js": "/Snny/static/js/2.40e9b86d.chunk.js",
+    "static/js/2.40e9b86d.chunk.js.map": "/Snny/static/js/2.40e9b86d.chunk.js.map",
+    "index.html": "/Snny/index.html",
+    "precache-manifest.6b70514dc73b522224d62ee4f91a8fbf.js": "/Snny/precache-manifest.6b70514dc73b522224d62ee4f91a8fbf.js",
+    "service-worker.js": "/Snny/service-worker.js",
+    "static/css/main.7b2ac3e8.chunk.css.map": "/Snny/static/css/main.7b2ac3e8.chunk.css.map",
+    "static/js/2.40e9b86d.chunk.js.LICENSE.txt": "/Snny/static/js/2.40e9b86d.chunk.js.LICENSE.txt",
+    "static/media/icon.png": "/Snny/static/media/icon.9118e9d8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8969bc3a.js",
+    "static/js/2.40e9b86d.chunk.js",
+    "static/css/main.7b2ac3e8.chunk.css",
+    "static/js/main.6483cf75.chunk.js"
+  ]
+}
