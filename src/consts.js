@@ -2,6 +2,7 @@ const weatherUrl = 'https://dataservice.accuweather.com';
 const imageUrl = 'https://developer.accuweather.com/sites/default/files';
 const DEFAULT_LOCATION = { label: 'Tel Aviv', key: '215854', country: 'Israel' };
 const ERROR_MSG = `Sorry, unable to fetch the weather, maybe it's to cloudy` ;
+const SEARCH_ERROR_MSG = `Sorry, unable to fetch the cities list, maybe it's to cloudy` ;
 
 const ROUTES = {
   home: '/home',
@@ -16,6 +17,7 @@ export {
   DEFAULT_LOCATION,
   ROUTES,
   ERROR_MSG,
+  SEARCH_ERROR_MSG,
   API_KEY
 }
 

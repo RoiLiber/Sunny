@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { withStyles } from '@material-ui/core/styles';
 import { TextField, CircularProgress } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
-import { ERROR_MSG } from '../../consts';
+import { SEARCH_ERROR_MSG } from '../../consts';
 import { setCity, setCityDetails } from '../../actions/mainActions';
 import { fetchAutoCompleteOptions } from '../../api';
 import colors from '../../styles/colorsVar';
@@ -49,7 +49,7 @@ function AutoComplete(props) {
             setIsError(false);
             setOptions(cities.map((city) => (
                 { label: city.LocalizedName, key: city.Key, country: city.Country.LocalizedName })
-            ))
+            ));
         }
         catch (error) {
             setIsError(true)
@@ -90,7 +90,7 @@ function AutoComplete(props) {
                         setCitySearch(citySearch)
                     }}
                     variant="outlined"
-                    helperText={isError ? ERROR_MSG : ' '}
+                    helperText={isError ? SEARCH_ERROR_MSG : ' '}
                     InputProps={{
                         ...params.InputProps,
                         classes: { root: classes.textField },
