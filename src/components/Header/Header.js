@@ -20,7 +20,7 @@ function Header(props) {
               <Link to={ROUTES.home}>
                   <Button
                         variant="text"
-                        className={pathname === ROUTES.home || pathname === '/' ? 'active' : ''}
+                        className={ pathname === ROUTES.home ? 'active' : ''}
                       >
                         Home
                   </Button>
