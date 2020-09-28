@@ -5,7 +5,7 @@ import './App.scss';
 
 export default function App() {
   return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
           <div className="App">
               <WeatherApp/>
           </div>

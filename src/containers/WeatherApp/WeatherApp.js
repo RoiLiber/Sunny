@@ -16,7 +16,7 @@ function WeatherApp(props) {
             <Switch>
                 <Route exect path={ROUTES.home} component={HomePage}/>
                 <Route exect path={ROUTES.favorites} component={Favorites}/>
-                <Route path="/" render={() => <Redirect to="/home"/>}/>
+                <Route path="process.env.PUBLIC_URL + '/'" render={() => <Redirect to="/home"/>}/>
             </Switch>
         </div>
     )
