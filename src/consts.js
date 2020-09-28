@@ -1,4 +1,6 @@
-const weatherUrl = 'https://dataservice.accuweather.com';
+const cors = 'https://cors-anywhere.herokuapp.com/';
+const url = 'https://dataservice.accuweather.com';
+const weatherUrl = `${cors}${url}`;
 const imageUrl = 'https://developer.accuweather.com/sites/default/files';
 const DEFAULT_LOCATION = { label: 'Tel Aviv', key: '215854', country: 'Israel' };
 const ERROR_MSG = `Sorry, unable to fetch the weather, maybe it's to cloudy` ;
