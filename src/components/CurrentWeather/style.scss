@@ -10,10 +10,13 @@ div.current_weather_wrapper {
   & > div.cityName {
     width: 100%;
     display: flex;
-    font-size: 25px;
+    font-size: 20px;
     text-align: left;
     padding: 0 20px;
     font-weight: bold;
+    @include respond-to('small') {
+      font-size: 25px;
+    }
     @include respond-to('medium') {
       font-size: 35px;
     }
@@ -22,10 +25,13 @@ div.current_weather_wrapper {
     }
   }
   & > div.description {
-    font-size: 20px;
+    font-size: 15px;
     width: 100%;
     display: flex;
     padding: 20px;
+    @include respond-to('small') {
+      font-size: 20px;
+    }
     @include respond-to('medium') {
       font-size: 25px;
     }
@@ -39,13 +45,18 @@ div.current_weather_wrapper {
     width: 100%;
 
     & > div.degree {
-      font-size: 35px;
-
-      & > span.degree_symbol {
-        font-size: 25px;
+      font-size: 30px;
+      @include respond-to('small') {
+        font-size: 35px;
       }
       @include respond-to('large') {
         font-size: 45px;
+      }
+      & > span.degree_symbol {
+        font-size: 20px;
+        @include respond-to('small') {
+          font-size: 25px;
+        }
       }
     }
   }
@@ -59,8 +70,12 @@ div.current_weather_wrapper {
       color: $dark-yellow;
       border-radius: 10px;
       border: none;
-      font-size: 12px;
-      height: 35px;
+      font-size: 9px;
+      height: 30px;
+      @include respond-to('small') {
+        font-size: 12px;
+        height: 35px;
+      }
     }
     & > div button.active {
       background-color: $dark-yellow;
@@ -83,9 +98,13 @@ div.current_weather_wrapper {
       color: $dark-yellow;
       border-radius: 10px;
       border: none;
-      font-size: 12px;
-      height: 35px;
+      font-size: 9px;
+      height: 30px;
       font-weight: bold;
+      @include respond-to('small') {
+        font-size: 12px;
+        height: 35px;
+      }
     }
     & > div button.active {
       border: thin solid $dark-teal;
