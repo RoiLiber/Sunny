@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Sunny/static/css/main.95d05978.chunk.css",
-    "main.js": "/Sunny/static/js/main.eb5f223c.chunk.js",
-    "main.js.map": "/Sunny/static/js/main.eb5f223c.chunk.js.map",
+    "main.css": "/Sunny/static/css/main.c351150f.chunk.css",
+    "main.js": "/Sunny/static/js/main.305f1671.chunk.js",
+    "main.js.map": "/Sunny/static/js/main.305f1671.chunk.js.map",
     "runtime-main.js": "/Sunny/static/js/runtime-main.2b2de1f9.js",
     "runtime-main.js.map": "/Sunny/static/js/runtime-main.2b2de1f9.js.map",
     "static/js/2.f94f5179.chunk.js": "/Sunny/static/js/2.f94f5179.chunk.js",
     "static/js/2.f94f5179.chunk.js.map": "/Sunny/static/js/2.f94f5179.chunk.js.map",
     "index.html": "/Sunny/index.html",
-    "precache-manifest.c54c2faf55c16a3aa28af1d10c080cc1.js": "/Sunny/precache-manifest.c54c2faf55c16a3aa28af1d10c080cc1.js",
+    "precache-manifest.659f6c59634ca6c0b6a57201cb361a69.js": "/Sunny/precache-manifest.659f6c59634ca6c0b6a57201cb361a69.js",
     "service-worker.js": "/Sunny/service-worker.js",
-    "static/css/main.95d05978.chunk.css.map": "/Sunny/static/css/main.95d05978.chunk.css.map",
+    "static/css/main.c351150f.chunk.css.map": "/Sunny/static/css/main.c351150f.chunk.css.map",
     "static/js/2.f94f5179.chunk.js.LICENSE.txt": "/Sunny/static/js/2.f94f5179.chunk.js.LICENSE.txt",
     "static/media/icon.png": "/Sunny/static/media/icon.9118e9d8.png"
   },
   "entrypoints": [
     "static/js/runtime-main.2b2de1f9.js",
     "static/js/2.f94f5179.chunk.js",
-    "static/css/main.95d05978.chunk.css",
-    "static/js/main.eb5f223c.chunk.js"
+    "static/css/main.c351150f.chunk.css",
+    "static/js/main.305f1671.chunk.js"
   ]
 }
