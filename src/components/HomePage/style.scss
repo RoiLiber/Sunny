@@ -41,7 +41,7 @@ div.home_page {
     & > div.error_wrapper {
       position: relative;
       width: 100%;
-      top: -15vh;
+      top: -10vh;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -54,7 +54,7 @@ div.home_page {
         position: relative;
         top: -30vh;
         @include respond-to('small') {
-          top: -21vh;
+          top: -20vh;
         }
       }
 

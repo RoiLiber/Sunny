@@ -15,11 +15,13 @@ function WeatherDetails(props) {
                 <div className={`day_name ${currDay ? 'today' : ''}`}>
                     {new Date(date).toString().split(' ')[0]}
                 </div>
-                <img
-                    src={`${imageUrl}/${dayTemp.icon.toString().padStart(2, '0')}-s.png`}
-                    alt="daily weather icon"
-                    className={'icon'}
-                />
+                <div className={'weather_img'}>
+                    <img
+                        src={`${imageUrl}/${dayTemp.icon.toString().padStart(2, '0')}-s.png`}
+                        alt="daily weather icon"
+                        className={'icon'}
+                    />
+                </div>
                 <div className={'day_tamp'}>
                     <span className={'low_tamp_symbol'}>L:</span>
                     {Math.round(minTemp)}

@@ -11,7 +11,10 @@ const ROUTES = {
   favorites: '/favorites',
 };
 
-const API_KEY = process.env.REACT_APP_API_KEY || 'QufGDAGt5cAG5AU7z4bUnrP34N7imMNi';
+const API_KEY = process.env.REACT_APP_API_KEY || '4bQQShaQOVlZcYyaY5dIprePgiVGLcAZ';
+
+// the next API_KEY is for when we past the 50 API call limit for this app
+// const oneMoreApiKey = '7va3PZ339tY4Gph5Y6kHRACPcRdfbdiT';
 
 export {
   weatherUrl,
@@ -22,3 +25,5 @@ export {
   SEARCH_ERROR_MSG,
   API_KEY
 }
+
+

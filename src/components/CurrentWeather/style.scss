@@ -6,6 +6,7 @@ div.current_weather_wrapper {
   flex-wrap: wrap;
   width: 100%;
   color: $dark-teal;
+  margin-top: 5vh;
 
   & > div.cityName {
     width: 100%;
@@ -63,7 +64,8 @@ div.current_weather_wrapper {
   & > div.set_tamp_type {
     width: 50%;
     display: flex;
-    padding: 25px 15px;
+    padding: 5px 15px;
+    margin-top: 5vh;
 
     & > div button {
       background-color: $dark-background;
@@ -86,9 +88,10 @@ div.current_weather_wrapper {
   & > div.set_dark_mode {
     width: 50%;
     display: flex;
-    padding: 25px 15px;
+    padding: 5px 15px;
     justify-content: flex-end;
     z-index: 1000;
+    margin-top: 5vh;
     @include respond-to('large') {
       padding: 25px 75px ;
     }
