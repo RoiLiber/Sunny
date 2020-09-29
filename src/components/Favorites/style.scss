@@ -74,18 +74,24 @@ div.favorites_wrapper {
       border: thin solid $dark-red;
       padding: 50px;
       border-radius: 25px;
-      margin: 10% 20% 25px 20%;
+      margin: 10% 10% 25px 10%;
       @include respond-to('small') {
         font-size: 25px;
+        margin: 10% 20% 25px 20%;
       }
     }
-    & > div .favorite_icon {
-      width: 100%;
-      margin: 15px;
-      font-size: 35px;
-      color: $dark-red;
-      @include respond-to('small') {
-        font-size: 45px;
+    & > div {
+      display: flex;
+      justify-content: center;
+
+      & > .favorite_icon {
+        width: 100%;
+        margin: 15px;
+        font-size: 35px;
+        color: $dark-red;
+        @include respond-to('small') {
+          font-size: 45px;
+        }
       }
     }
   }
