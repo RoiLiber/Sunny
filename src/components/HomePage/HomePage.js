@@ -123,7 +123,7 @@ function HomePage(props) {
             {renderFavoriteIcon()}
             <div className={`city_weather_wrapper`}>
                 {renderWeatherBody()}
-                {!isError && !isLoader && WeatherIcon({weatherDescription, darkMode})}
+                {!isError && !isLoader && <WeatherIcon weatherDescription={weatherDescription}/>}
             </div>
         </div>
     )

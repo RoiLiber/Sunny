@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
+import { connect } from "react-redux";
 import RainEffect from "../RainEffect";
 import LightningEffect from "../Lightning";
 import './style.scss';
 
-export default function WeatherIcon(props) {
 
+function WeatherIcon(props) {
     const { weatherDescription, darkMode } = props;
     const lightMode = !darkMode ? 'weather_icon_light_mode' : '';
 
@@ -88,3 +89,10 @@ export default function WeatherIcon(props) {
         }
     }
 }
+
+const mapStateToProps = state => ({
+    darkMode: state.mainReducer.darkMode,
+});
+
+export default connect(mapStateToProps)(WeatherIcon)
+
