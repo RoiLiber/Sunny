@@ -10,7 +10,7 @@ import { fetchAutoCompleteOptions } from '../../api';
 import colors from '../../styles/colorsVar';
 import './style.scss';
 
-const styles = (theme) => ({
+const styles = () => ({
     textField: {
         '& fieldset, &:hover fieldset': {
             borderColor: `${colors.darkYellow} !important`,
@@ -64,7 +64,7 @@ function AutoComplete(props) {
 
     return (
         <Autocomplete
-            className={`${classes.autoComplete} auto_complete ${!darkMode ? 'light_mode' : ''}`}
+            className={`auto_complete ${!darkMode ? 'light_mode' : ''}`}
             open={open}
             onClose={() => setOpen(false)}
             onChange={(e, value) => {

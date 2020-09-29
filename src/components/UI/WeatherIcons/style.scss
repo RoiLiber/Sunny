@@ -40,6 +40,10 @@ p { margin: 1.375rem 0; }
   }
 }
 
+.weather_icon_light_mode {
+  color: $light-teal;
+}
+
 .cloud {
   position: absolute;
   z-index: 1;

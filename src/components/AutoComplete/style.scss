@@ -17,10 +17,19 @@ div.auto_complete {
     & > div {
       color: $light-yellow;
 
+      input {
+        font-size: 11px;
+        height: 0;
+        @include respond-to('web') {
+          font-size: 15px;
+        }
+      }
+
       & > div button{
         color: $dark-teal !important;
       }
     }
+
     & > p {
       color: $light-red;
     }

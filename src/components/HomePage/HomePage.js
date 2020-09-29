@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { CircularProgress, Button } from '@material-ui/core';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
@@ -115,60 +115,6 @@ function HomePage(props) {
                 />
     }
 
-    function weatherIcons(weatherText) {
-
-        switch (weatherText) {
-            case 'Hazy Sunshine':
-            case 'Intermittent Clouds':
-            case 'Cloudy':
-            case 'Dreary (Overcast)':
-            case 'Flurries':
-            case 'Mostly Cloudy w/ Flurries':
-            case 'Partly Sunny w/ Flurries' :
-            case 'Mostly Cloudy':
-            case 'Windy':
-            case 'Fog': {
-                return WeatherIcon.cloudy()
-            }
-            case 'Showers':
-            case 'Rain':
-            case 'Sleet':
-            case 'Freezing Rain':
-            case 'Partly Cloudy w/ Showers': {
-                return <Fragment>
-                    {RainEffect(2)}
-                    {WeatherIcon.rainy()}
-                </Fragment>
-            }
-            case 'Mostly Cloudy w/ Showers':
-            case 'Partly Sunny w/ Showers': {
-                return <Fragment>
-                    {RainEffect(1)}
-                    {WeatherIcon.sunShower()}
-                </Fragment>
-            }
-            case 'T-Storms':
-            case 'Thunderstorm':
-            case 'Mostly Cloudy w/ T-Storms':
-            case 'Partly Sunny w/ T-Storms': {
-
-                return <Fragment>
-                    {RainEffect(3)}
-                    {LightningEffect()}
-                    {WeatherIcon.thunderStorm()}
-                </Fragment>
-            }
-            case 'Ice':
-            case 'Snow':
-            case 'Rain and Snow':
-            case 'Mostly Cloudy w/ Snow': {
-                return WeatherIcon.flurries()
-            }
-            default: {
-                return WeatherIcon.sunny()
-            }
-        }
-    }
     const weatherDescription = props.cityDetails.currWeatherInfo.description;
 
     return (
@@ -177,7 +123,7 @@ function HomePage(props) {
             {renderFavoriteIcon()}
             <div className={`city_weather_wrapper`}>
                 {renderWeatherBody()}
-                {!isError && !isLoader && weatherIcons(weatherDescription)}
+                {!isError && !isLoader && WeatherIcon({weatherDescription, darkMode})}
             </div>
         </div>
     )
