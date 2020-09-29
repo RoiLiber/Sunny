@@ -4,7 +4,7 @@ div.forecast_wrapper {
   display: flex;
   width: 100%;
   background-color: $dark-background;
-  padding-top: 2vh;
+  padding: 2vh 0 5vh 0;
 
   & > div.cards {
     display: flex;

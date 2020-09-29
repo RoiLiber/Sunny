@@ -97,12 +97,12 @@ div.favorites_wrapper {
   }
 
   & > div.fav_city_container {
+    position: relative;
     width: 100%;
     border: thin solid $dark-yellow;
     border-radius: 15px;
     max-height: 100px;
     display: flex;
-    justify-content: space-between;
     padding: 10px;
     align-items: center;
     margin: 15px;
@@ -122,11 +122,10 @@ div.favorites_wrapper {
     }
 
     & > div.city_details {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      padding-top: 10px;
+      padding: 0 15px;
       cursor: pointer;
       @include respond-to('medium') {
         font-size: 25px;
@@ -140,42 +139,64 @@ div.favorites_wrapper {
         }
       }
       & > div.description {
-        width: 50%;
         display: flex;
+        width: 50%;
       }
       & > div.temp {
-        width: 20%;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        @include respond-to('small') {
+          margin-right: 25px;
+        }
+        @include respond-to('medium') {
+          margin-right: 35px;
+        }
+        @include respond-to('large') {
+          font-size: 30px;
+        }
 
         & > span.tamp_symbol {
           font-size: 11px;
           @include respond-to('small') {
             font-size: 15px;
           }
+          @include respond-to('medium') {
+            font-size: 20px;
+          }
+          @include respond-to('large') {
+            font-size: 25px;
+          }
         }
       }
+    }
+    & > div.fav_weather_img {
+      display: flex;
+      align-items: center;
+
       & > img {
-        margin: 0 10px;
-        position: relative;
-        bottom: 15px;
+        padding: 0 10px;
         font-size: 30px;
+        margin: 0 35px;
         @include respond-to('small') {
           font-size: 50px;
         }
         @include respond-to('medium') {
-          width: 70px;
+          width: 100px;
         }
         @include respond-to('large') {
-          bottom: 25px;
-          width: 100px;
+          width: 120px;
         }
       }
     }
     & > .remove_icon {
-      margin: 5px;
+      position: absolute;
+      right: 0;
+      margin: 15px;
       color: $dark-red;
       border-bottom: thin solid $dark-red;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 20px;
       @include respond-to('small') {
         font-size: 25px;
       }

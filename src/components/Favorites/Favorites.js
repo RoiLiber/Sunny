@@ -84,22 +84,24 @@ function Favorites(props) {
                         <div className={'city_name'}>
                             {city.label}
                         </div>
-                        <div className={'description'}>
-                            {favCitiesInfo[city.key].description}
-                        </div>
                         <div className={'temp'}>
                             {Math.round(tamp)}
                             &#176;
                             <span className={'tamp_symbol'}>{metric ? 'C' : 'F'}</span>
                         </div>
-                        {favCitiesInfo[city.key].img && (
+                        <div className={'description'}>
+                            {favCitiesInfo[city.key].description}
+                        </div>
+                    </div>
+                    {favCitiesInfo[city.key].img && (
+                        <div className={'fav_weather_img'}>
                             <img
                                 src={favCitiesInfo[city.key].img}
                                 alt="weather icon"
                                 className={'img'}
                             />
-                        )}
-                    </div>
+                        </div>
+                    )}
                     <DeleteIcon
                         className={'remove_icon'}
                         onClick={() => {
