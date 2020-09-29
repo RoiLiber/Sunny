@@ -19,6 +19,12 @@ const styles = () => ({
     invisible: {
         display: 'none',
     },
+    paper: {
+        backgroundColor: `${colors.lightGreen} !important`,
+        '& div:hover': {
+            backgroundColor: `${colors.darkYellow} !important`,
+        }
+    }
 });
 
 const reg = /^[a-zA-Z]+(-[a-zA-Z]+)*$/;
@@ -76,7 +82,7 @@ function AutoComplete(props) {
             getOptionLabel={(option) => option && option.label}
             options={options}
             loading={loading}
-            classes={{ popupIndicator: classes.invisible }}
+            classes={{ popupIndicator: classes.invisible, paper: classes.paper }}
             renderInput={(params) => (
                 <TextField
                     {...params}
