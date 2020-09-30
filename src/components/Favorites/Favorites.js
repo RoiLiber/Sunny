@@ -5,7 +5,7 @@ import { CircularProgress, Button } from '@material-ui/core';
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { setCity, removeFavoriteCity } from '../../actions/mainActions';
 import { fetchCityWeather } from '../../api';
-import { ROUTES, ERROR_MSG } from '../../consts';
+import { ROUTES, ERROR_MSG, NO_FAV_CITIES_SAVED } from '../../consts';
 import { Fade } from "react-reveal";
 import RainEffect from '../UI/RainEffect';
 import LightningEffect from '../UI/Lightning';
@@ -53,10 +53,7 @@ function Favorites(props) {
     function renderNoFavorites() {
         return (
             <div className={'no_favorites_container'}>
-                <span>
-                    There is no favorites cities saved yet, go to the home page,
-                    search for a city and click the heart to add it to your favorites list
-                </span>
+                <span>{NO_FAV_CITIES_SAVED}</span>
                 <Pulse forever duration={750}>
                     <FavoriteBorderIcon className={`favorite_icon`}/>
                 </Pulse>
