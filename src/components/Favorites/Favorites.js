@@ -102,12 +102,14 @@ function Favorites(props) {
                             />
                         </div>
                     )}
-                    <DeleteIcon
-                        className={'remove_icon'}
-                        onClick={() => {
-                            props.removeFavoriteCity(city.key)
-                        }}
-                    />
+                    <div className={'remove_icon_wrapper'}>
+                        <DeleteIcon
+                            className={'remove_icon'}
+                            onClick={() => {
+                                props.removeFavoriteCity(city.key)
+                            }}
+                        />
+                    </div>
                 </div>
             </Fade>
         })

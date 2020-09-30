@@ -189,20 +189,26 @@ div.favorites_wrapper {
         }
       }
     }
-    & > .remove_icon {
+    & > div.remove_icon_wrapper {
       position: absolute;
       right: 0;
-      margin: 15px;
-      color: $dark-red;
-      border-bottom: thin solid $dark-red;
+      margin: 0 15px;
       cursor: pointer;
-      font-size: 20px;
-      @include respond-to('small') {
-        font-size: 25px;
-      }
-      @include respond-to('medium') {
-        margin: 20px;
-        font-size: 35px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      & > .remove_icon {
+        color: $dark-red;
+        font-size: 20px;
+        border-bottom: thin solid $dark-red;
+        @include respond-to('small') {
+          font-size: 25px;
+        }
+        @include respond-to('medium') {
+          margin: 20px;
+          font-size: 35px;
+        }
       }
     }
   }
