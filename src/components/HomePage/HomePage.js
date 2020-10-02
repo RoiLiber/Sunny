@@ -23,22 +23,6 @@ function HomePage(props) {
         (async () => {
             try {
                 setIsLoader(true);
-                await geoLocationCity();
-                setIsError(false)
-            }
-            catch (e) {
-                setIsError(true)
-            }
-            finally {
-                setIsLoader(false)
-            }
-        })()
-    }, []);
-
-    useEffect(() => {
-        (async () => {
-            try {
-                setIsLoader(true);
                 await updateForecast(key, metric);
                 setIsError(false)
             }

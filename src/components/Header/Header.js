@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
@@ -6,9 +6,24 @@ import { ROUTES } from '../../consts';
 import { Button } from "@material-ui/core";
 import logo from '../../assets/icon/logos/icon.png';
 import './style.scss';
+import {geoLocationCity} from "../../api";
 
 function Header(props) {
   const { location: { pathname }, darkMode } = props;
+
+    useEffect(() => {
+        (async () => {
+            try {
+                await geoLocationCity();
+            }
+            catch (e) {
+                console.log('geoLocationCity error')
+            }
+            finally {
+                console.log('geoLocationCity set')
+            }
+        })()
+    }, []);
 
   return (
       <div className={`header ${!darkMode ? 'header_light_mode' : ''}`}>

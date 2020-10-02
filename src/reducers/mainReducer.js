@@ -8,7 +8,7 @@ const metricPreferences = localStorage.getItem('metricPreferences');
 const darkModePreferences = localStorage.getItem('darkModePreferences');
 
 const initialState = Immutable({
-    city: {},
+    city: DEFAULT_LOCATION || {},
     cityDetails: {
         currWeatherInfo: {},
         forecast: [],

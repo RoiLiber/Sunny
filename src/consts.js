@@ -18,9 +18,6 @@ const ROUTES = {
 const API_GEOLOCATION_KEY = process.env.REACT_APP_API_KEY || '07a6835d0ab442a7ebf372dd744b19ab';
 const API_KEY = process.env.REACT_APP_API_KEY || 'dXe0jgHVKxwAEA7OZ1W7Dk37vR97DUEN';
 
-// the next API_KEY is for when we past the 50 API call limit for this app
-// const oneMoreApiKey = 'LcPYvsZuAFefPcYUPVAgGcK1UzAjBlqy';
-
 export {
   weatherUrl,
   geoUrl,

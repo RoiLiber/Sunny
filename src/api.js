@@ -24,7 +24,7 @@ async function updateCurrentCityWeather(key) {
 }
 
 async function geoLocationCity() {
-  const response = await fetch(`${geoUrl}/109.65.26.126?access_key=${API_GEOLOCATION_KEY}`);
+  const response = await fetch(`${geoUrl}/check? access_key = ${API_GEOLOCATION_KEY}`);
   const geo = await response.json();
   const { city } = geo || {};
 
