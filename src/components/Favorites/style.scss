@@ -20,18 +20,19 @@ div.favorites_wrapper {
     align-items: flex-start;
   }
 
+  & > div.storm {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 90vh;
+  }
+
   & > div.error_wrapper {
     position: relative;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    & > div.storm {
-      width: 100%;
-      position: relative;
-      top: -15vh;
-    }
 
     & > div.error_msg {
       font-size: 15px;

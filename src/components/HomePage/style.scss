@@ -10,6 +10,13 @@ div.home_page {
   color: $dark-yellow;
   flex-wrap: wrap;
 
+  & > div.storm {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 90vh;
+  }
+
   & > .favorite_icon {
     position: fixed;
     right: 25px;
@@ -47,15 +54,6 @@ div.home_page {
       justify-content: center;
       @include respond-to('small') {
         top: -20vh;
-      }
-
-      & > div.storm {
-        width: 100%;
-        position: relative;
-        top: -30vh;
-        @include respond-to('small') {
-          top: -20vh;
-        }
       }
 
       & > div.error_msg {

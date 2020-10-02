@@ -1,7 +1,7 @@
-import _get from 'lodash/get';
 import store from './store';
-import { setCityDetails } from './actions/mainActions';
-import { weatherUrl, imageUrl, API_KEY } from './consts';
+import { setCityDetails, setCity } from './actions/mainActions';
+import { weatherUrl, geoUrl, imageUrl, API_KEY, API_GEOLOCATION_KEY } from './consts';
+import { get, lowerCase } from 'lodash';
 
 async function fetchCityWeather(key) {
   const response = await fetch(`${weatherUrl}/currentconditions/v1/${key}?apikey=${API_KEY}`);
@@ -10,8 +10,8 @@ async function fetchCityWeather(key) {
   const weatherImage = WeatherIcon && `${imageUrl}/${WeatherIcon.toString().padStart(2, '0')}-s.png`;
 
   return {
-    tempC: _get(Temperature, ['Metric', 'Value'], ''),
-    tempF: _get(Temperature, ['Imperial', 'Value'], ''),
+    tempC: get(Temperature, ['Metric', 'Value'], ''),
+    tempF: get(Temperature, ['Imperial', 'Value'], ''),
     description: WeatherText,
     img: weatherImage,
   }
@@ -21,6 +21,20 @@ async function updateCurrentCityWeather(key) {
   const currWeatherInfo = await fetchCityWeather(key);
 
   store.dispatch(setCityDetails('currWeatherInfo', currWeatherInfo))
+}
+
+async function geoLocationCity() {
+  const response = await fetch(`${geoUrl}/109.65.26.126?access_key=${API_GEOLOCATION_KEY}`);
+  const geo = await response.json();
+  const { city } = geo || {};
+
+  const cityResult = await fetchAutoCompleteOptions(lowerCase(city));
+  const cityObj = await cityResult[0];
+  const { LocalizedName, Country, Key } = cityObj || {};
+  const country = Country.LocalizedName;
+  const cityConfig = { label: LocalizedName, key: Key, country: country };
+
+  store.dispatch(setCity(cityConfig))
 }
 
 async function fetchAutoCompleteOptions(value) {
@@ -38,12 +52,12 @@ async function fetchForecastDetails(key, metricBool) {
   return DailyForecasts.map((day) => ({
     date: day.Date,
     temp: {
-      min: _get(day.Temperature, ['Minimum', 'Value'], ''),
-      max: _get(day.Temperature, ['Maximum', 'Value'], ''),
+      min: get(day.Temperature, ['Minimum', 'Value'], ''),
+      max: get(day.Temperature, ['Maximum', 'Value'], ''),
     },
     dayTemp: {
-      icon: _get(day.Day, ['Icon'], ''),
-      text: _get(day.Day, ['IconPhrase'], ''),
+      icon: get(day.Day, ['Icon'], ''),
+      text: get(day.Day, ['IconPhrase'], ''),
     },
   }))
 }
@@ -59,4 +73,5 @@ export {
   fetchForecastDetails,
   fetchAutoCompleteOptions,
   updateForecast,
+  geoLocationCity
 }

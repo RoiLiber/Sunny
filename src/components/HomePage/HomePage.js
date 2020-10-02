@@ -4,7 +4,7 @@ import { CircularProgress, Button } from '@material-ui/core';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Favorite from '@material-ui/icons/Favorite';
 import { setCityDetails, setFavoriteCities, removeFavoriteCity } from '../../actions/mainActions';
-import { updateCurrentCityWeather, updateForecast, fetchAutoCompleteOptions } from '../../api';
+import { updateCurrentCityWeather, updateForecast, fetchAutoCompleteOptions, geoLocationCity } from '../../api';
 import { ERROR_MSG } from '../../consts';
 import AutoComplete from '../AutoComplete';
 import CurrentWeather from '../CurrentWeather';
@@ -23,6 +23,22 @@ function HomePage(props) {
         (async () => {
             try {
                 setIsLoader(true);
+                await geoLocationCity();
+                setIsError(false)
+            }
+            catch (e) {
+                setIsError(true)
+            }
+            finally {
+                setIsLoader(false)
+            }
+        })()
+    }, []);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setIsLoader(true);
                 await updateForecast(key, metric);
                 setIsError(false)
             }
@@ -36,7 +52,6 @@ function HomePage(props) {
     }, [metric, key]);
 
     function getCityWeather() {
-
         if (!key) return;
         (async () => {
             try {
@@ -66,10 +81,6 @@ function HomePage(props) {
         if (isError) {
             return (
                 <div className={'error_wrapper'}>
-                    <div className={'storm'}>
-                        {RainEffect(3)}
-                        {LightningEffect()}
-                    </div>
                     <div className={'error_msg'}>{ERROR_MSG}</div>
                     <Button
                         variant="text"
@@ -125,6 +136,10 @@ function HomePage(props) {
                 {renderWeatherBody()}
                 {!isError && !isLoader && <WeatherIcon weatherDescription={weatherDescription}/>}
             </div>
+            {isError && <div className={'storm'}>
+                {RainEffect(3)}
+                {LightningEffect()}
+            </div>}
         </div>
     )
 }

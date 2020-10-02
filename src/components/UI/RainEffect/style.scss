@@ -1,30 +1,31 @@
+@import "../../../styles/colorsConfig";
+
 .visualisation-container {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   position: absolute;
-  top: 9vh;
   z-index: 700;
 }
 
-.rain_effect{
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:1;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  position:absolute;
+.rain_effect {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
 }
 div.blnk {
-  animation:blnk 6s linear infinite;
+  animation: blnk 6s linear infinite;
 }
-.rain_effect i{
-  width:1px;
-  height:30px;
-  bottom:200px;
-  position:absolute;
+.rain_effect i {
+  width: 1px;
+  height: 30px;
+  bottom: 200px;
+  position: absolute;
   background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.6) 100%);
   animation:fall .63s linear infinite;
 }

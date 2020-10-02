@@ -119,10 +119,6 @@ function Favorites(props) {
         if (isError) {
             return (
                 <div className={'error_wrapper'}>
-                    <div className={'storm'}>
-                        {RainEffect(3)}
-                        {LightningEffect()}
-                    </div>
                     <div className={'error_msg'}>{ERROR_MSG}</div>
                     <Button
                         variant="text"
@@ -139,6 +135,10 @@ function Favorites(props) {
     return (
         <div className={`favorites_wrapper ${!darkMode ? 'favorites_light_mode' : ''}`}>
             {renderFavBody()}
+            {isError && <div className={'storm'}>
+                {RainEffect(3)}
+                {LightningEffect()}
+            </div>}
         </div>
     )
 }

@@ -79,7 +79,7 @@ function AutoComplete(props) {
             }}
             value={citySearch}
             onInputChange={handleSearchWordChanged}
-            getOptionLabel={(option) => option && option.label}
+            getOptionLabel={(option) => option && option.label && `${option.label}, ${option.country}`}
             options={options}
             loading={loading}
             classes={{ popupIndicator: classes.invisible, paper: classes.paper }}
