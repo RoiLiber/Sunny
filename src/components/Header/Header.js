@@ -5,8 +5,8 @@ import { Link, withRouter } from 'react-router-dom';
 import { ROUTES } from '../../consts';
 import { Button } from "@material-ui/core";
 import logo from '../../assets/icon/logos/icon.png';
+import { geoLocationCity } from "../../api";
 import './style.scss';
-import {geoLocationCity} from "../../api";
 
 function Header(props) {
   const { location: { pathname }, darkMode } = props;

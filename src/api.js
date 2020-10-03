@@ -24,11 +24,13 @@ async function updateCurrentCityWeather(key) {
 }
 
 async function geoLocationCity() {
-  const response = await fetch(`${geoLocationUrl}/check?access_key=${API_GEOLOCATION_KEY}`);
+  const response = await fetch(`${geoLocationUrl}/api/v1?apiKey=${API_GEOLOCATION_KEY}`);
   const geo = await response.json();
-  const { city } = geo || {};
+  const { location } = geo || {};
+  const { city } = location || {};
+  const defaultCity = city === undefined ? 'Tel Aviv' : city === 'Eilat' ? 'Elat' : city;
 
-  const cityResult = await fetchAutoCompleteOptions(lowerCase(city));
+  const cityResult = await fetchAutoCompleteOptions(lowerCase(defaultCity));
   const cityObj = await cityResult[0];
   const { LocalizedName, Country, Key } = cityObj || {};
   const country = Country.LocalizedName;
