@@ -58,6 +58,11 @@ const removeFavoriteCity = value => {
     })
 };
 
+const setError = err => ({
+    type: types.setCity,
+    err
+});
+
 export {
     setCity,
     setCityDetails,
@@ -65,5 +70,6 @@ export {
     removeFavoriteCity,
     setTampMetric,
     setDarkMode,
-    setGeoLocationApproval
+    setGeoLocationApproval,
+    setError
 }

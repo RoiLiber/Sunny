@@ -7,6 +7,7 @@ const actionTypes = {
     tampToggle: 'TAMP_TOGGLE',
     setDarkMode: 'SET_DARK_MODE',
     setGeoLocationApproval: 'SET_GEO_LOCATION_APPROVAL',
+    setError: 'SET_ERROR'
 };
 
 export default actionTypes;

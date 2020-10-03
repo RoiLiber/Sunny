@@ -8,7 +8,7 @@ const darkModePreferences = localStorage.getItem('darkModePreferences');
 const geoLocationApproved = localStorage.getItem('geoLocationApproved');
 
 const initialState = Immutable({
-    city: {},
+    city: { },
     cityDetails: {
         currWeatherInfo: {},
         forecast: [],
@@ -16,7 +16,8 @@ const initialState = Immutable({
     favoriteCities: JSON.parse(favoritesCity) || [],
     metric: JSON.parse(metricPreferences) === null ? true : JSON.parse(metricPreferences),
     darkMode: JSON.parse(darkModePreferences) === null ? true : JSON.parse(darkModePreferences),
-    geoLocation: JSON.parse(geoLocationApproved) || false
+    geoLocation: JSON.parse(geoLocationApproved) || false,
+    apiError: ''
 });
 
 export default handleActions({
@@ -26,4 +27,5 @@ export default handleActions({
     [types.tampToggle]: (state, { bool }) => state.setIn(['metric'], bool),
     [types.setDarkMode]: (state, { bool }) => state.setIn(['darkMode'], bool),
     [types.setGeoLocationApproval]: (state, { bool }) => state.setIn(['geoLocation'], bool),
+    [types.setError]: (state, { err }) => state.setIn(['apiError'], err),
 }, initialState)
