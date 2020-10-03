@@ -4,7 +4,7 @@ import { CircularProgress, Button } from '@material-ui/core';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Favorite from '@material-ui/icons/Favorite';
 import { setCityDetails, setFavoriteCities, removeFavoriteCity } from '../../actions/mainActions';
-import { updateCurrentCityWeather, updateForecast, fetchAutoCompleteOptions, geoLocationCity } from '../../api';
+import { updateCurrentCityWeather, updateForecast, fetchAutoCompleteOptions } from '../../api';
 import { ERROR_MSG } from '../../consts';
 import AutoComplete from '../AutoComplete';
 import CurrentWeather from '../CurrentWeather';
@@ -20,6 +20,7 @@ function HomePage(props) {
     const [isError, setIsError] = useState(false);
 
     useEffect(() => {
+        if (!key) return;
         (async () => {
             try {
                 setIsLoader(true);
