@@ -1,7 +1,7 @@
 import store from './store';
 import { setCityDetails, setCity } from './actions/mainActions';
-import { weatherUrl, geoLocationUrl, imageUrl, API_KEY, API_GEOLOCATION_KEY } from './consts';
-import { get, lowerCase } from 'lodash';
+import { weatherUrl, imageUrl, API_KEY } from './consts';
+import { get } from 'lodash';
 
 async function fetchCityWeather(key) {
   const response = await fetch(`${weatherUrl}/currentconditions/v1/${key}?apikey=${API_KEY}`);
@@ -24,17 +24,12 @@ async function updateCurrentCityWeather(key) {
 }
 
 async function geoLocationCity() {
-  const response = await fetch(`${geoLocationUrl}/api/v1?apiKey=${API_GEOLOCATION_KEY}`);
+  const response = await fetch(`${weatherUrl}/locations/v1/cities/ipaddress?apikey=${API_KEY}`);
   const geo = await response.json();
-  const { location } = geo || {};
-  const { city } = location || {};
-  const defaultCity = city === undefined ? 'Tel Aviv' : city === 'Eilat' ? 'Elat' : city;
-
-  const cityResult = await fetchAutoCompleteOptions(lowerCase(defaultCity));
-  const cityObj = await cityResult[0];
-  const { LocalizedName, Country, Key } = cityObj || {};
+  const { ParentCity, Country } = geo || {};
+  const { Key, LocalizedName }= ParentCity || {};
   const country = Country.LocalizedName;
-  const cityConfig = { label: LocalizedName, key: Key, country: country };
+  const cityConfig = { label: LocalizedName, key: Key, country };
 
   store.dispatch(setCity(cityConfig))
 }

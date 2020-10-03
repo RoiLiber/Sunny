@@ -1,6 +1,5 @@
 const cors = 'https://cors-anywhere.herokuapp.com/';
 const url = 'https://dataservice.accuweather.com';
-const geoLocationUrl = 'https://geo.ipify.org';
 const weatherUrl = `${cors}${url}`;
 const imageUrl = 'https://developer.accuweather.com/sites/default/files';
 const DEFAULT_LOCATION = { label: 'Tel Aviv', key: '215854', country: 'Israel' };
@@ -14,20 +13,17 @@ const ROUTES = {
   favorites: '/favorites',
 };
 
-const API_GEOLOCATION_KEY = process.env.REACT_APP_API_KEY || 'at_LzdupIGBJzpNO1XFiGDs3bHwCMtIA';
-const API_KEY = process.env.REACT_APP_API_KEY || 'mSOZNqLv1T8q4bKAuEodxBG1dvSBBZee';
+const API_KEY = process.env.REACT_APP_API_KEY || 'MXNuOL1LGmSqFC49yETuTpzAkwx9rrHf';
 
 export {
   weatherUrl,
-  geoLocationUrl,
   imageUrl,
   DEFAULT_LOCATION,
   ROUTES,
   ERROR_MSG,
   NO_FAV_CITIES_SAVED,
   SEARCH_ERROR_MSG,
-  API_KEY,
-  API_GEOLOCATION_KEY
+  API_KEY
 }
 
 
