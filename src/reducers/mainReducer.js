@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 import types from '../actions/actionTypes';
-import { DEFAULT_LOCATION } from '../consts';
+// import { DEFAULT_LOCATION } from '../consts';
 import Immutable from 'seamless-immutable';
 
 const favoritesCity = localStorage.getItem('favorites');
@@ -8,7 +8,7 @@ const metricPreferences = localStorage.getItem('metricPreferences');
 const darkModePreferences = localStorage.getItem('darkModePreferences');
 
 const initialState = Immutable({
-    city: DEFAULT_LOCATION || {},
+    city: {},
     cityDetails: {
         currWeatherInfo: {},
         forecast: [],
