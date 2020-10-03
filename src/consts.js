@@ -1,8 +1,7 @@
 const cors = 'https://cors-anywhere.herokuapp.com/';
-const url = 'https://dataservice.accuweather.com';
-const geoLocationUrl = 'http://api.ipstack.com';
+const url = 'https://dataservice.accuweather.com/';
+const geoLocationUrl = 'http://api.ipstack.com/';
 const weatherUrl = `${cors}${url}`;
-const geoUrl = `${cors}${geoLocationUrl}`;
 const imageUrl = 'https://developer.accuweather.com/sites/default/files';
 const DEFAULT_LOCATION = { label: 'Tel Aviv', key: '215854', country: 'Israel' };
 const ERROR_MSG = `Sorry, unable to fetch the weather, maybe it's too cloudy` ;
@@ -20,7 +19,7 @@ const API_KEY = process.env.REACT_APP_API_KEY || 'gVujG115YxQcjWoMtIPXMVGKQVG0P3
 
 export {
   weatherUrl,
-  geoUrl,
+  geoLocationUrl,
   imageUrl,
   DEFAULT_LOCATION,
   ROUTES,
