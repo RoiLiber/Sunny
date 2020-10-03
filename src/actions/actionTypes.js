@@ -6,6 +6,7 @@ const actionTypes = {
     updateFavorites: 'UPDATE_FAVORITES',
     tampToggle: 'TAMP_TOGGLE',
     setDarkMode: 'SET_DARK_MODE',
+    setGeoLocationApproval: 'SET_GEO_LOCATION_APPROVAL',
 };
 
 export default actionTypes;

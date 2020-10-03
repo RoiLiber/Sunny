@@ -6,6 +6,14 @@ const setCity = value => ({
     value
 });
 
+const setGeoLocationApproval = bool => {
+    localStorage.setItem('geoLocationApproved', JSON.stringify(bool));
+    return ({
+        type: types.setGeoLocationApproval,
+        bool
+    })
+};
+
 const setCityDetails = (key, value) => ({
     type: types.setCityDetails,
     key,
@@ -57,4 +65,5 @@ export {
     removeFavoriteCity,
     setTampMetric,
     setDarkMode,
+    setGeoLocationApproval
 }

@@ -2,7 +2,6 @@ const cors = 'https://cors-anywhere.herokuapp.com/';
 const url = 'https://dataservice.accuweather.com';
 const weatherUrl = `${cors}${url}`;
 const imageUrl = 'https://developer.accuweather.com/sites/default/files';
-const DEFAULT_LOCATION = { label: 'Tel Aviv', key: '215854', country: 'Israel' };
 const ERROR_MSG = `Sorry, unable to fetch the weather, maybe it's too cloudy` ;
 const SEARCH_ERROR_MSG = `Sorry, unable to fetch the cities list, maybe it's to cloudy` ;
 const NO_FAV_CITIES_SAVED = 'There are no favorite cities saved yet, go to the home page, ' +
@@ -13,17 +12,19 @@ const ROUTES = {
   favorites: '/favorites',
 };
 
-const API_KEY = process.env.REACT_APP_API_KEY || 'e7a8AMA315XSHYFYaCPEYUTORtvkT1PA';
+const API_KEY = process.env.REACT_APP_API_KEY || 'KQfzPobXo4NBMv0nv3EFUw29U6KaQ2RX';
 
 export {
   weatherUrl,
   imageUrl,
-  DEFAULT_LOCATION,
   ROUTES,
   ERROR_MSG,
   NO_FAV_CITIES_SAVED,
   SEARCH_ERROR_MSG,
   API_KEY
 }
+
+// for testing
+// const DEFAULT_LOCATION = { label: 'Tel Aviv', key: '215854', country: 'Israel' };
 
 

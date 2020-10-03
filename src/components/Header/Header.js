@@ -9,9 +9,10 @@ import './style.scss';
 import {geoLocationCity} from "../../api";
 
 function Header(props) {
-  const { location: { pathname }, darkMode } = props;
+  const { location: { pathname }, darkMode, geoLocation } = props;
 
     useEffect(() => {
+        if (geoLocation !== true) return;
         (async () => {
             try {
                 await geoLocationCity();
@@ -23,7 +24,7 @@ function Header(props) {
                 console.log('geoLocationCity set')
             }
         })()
-    }, []);
+    }, [geoLocation]);
 
   return (
       <div className={`header ${!darkMode ? 'header_light_mode' : ''}`}>
@@ -34,10 +35,10 @@ function Header(props) {
           <div className={'app_nav_buttons'}>
               <Link to={ROUTES.home}>
                   <Button
-                        variant="text"
-                        className={ pathname === ROUTES.home ? 'active' : ''}
-                      >
-                        Home
+                      variant="text"
+                      className={ pathname === ROUTES.home ? 'active' : ''}
+                  >
+                      Home
                   </Button>
               </Link>
               <Link to={ROUTES.favorites}>
@@ -45,7 +46,7 @@ function Header(props) {
                       variant="text"
                       className={pathname === ROUTES.favorites ? 'active' : ''}
                   >
-                    Favorites
+                      Favorites
                   </Button>
               </Link>
           </div>
@@ -54,7 +55,8 @@ function Header(props) {
 }
 
 const mapStateToProps = state => ({
-    darkMode: state.mainReducer.darkMode
+    darkMode: state.mainReducer.darkMode,
+    geoLocation: state.mainReducer.geoLocation
 });
 
 export default compose(connect(mapStateToProps), withRouter)(Header)
