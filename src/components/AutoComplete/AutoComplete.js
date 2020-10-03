@@ -27,7 +27,7 @@ const styles = () => ({
     }
 });
 
-const reg = /^[a-zA-Z]+(-[a-zA-Z]+)*$/;
+const reg = /^[a-zA-Z ]+(-[a-zA-Z ]+)*$/;
 
 function AutoComplete(props) {
     const { classes, darkMode } = props;
