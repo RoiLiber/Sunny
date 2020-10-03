@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import { CircularProgress, Button } from '@material-ui/core';
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -12,14 +12,17 @@ import LightningEffect from '../UI/Lightning';
 import Pulse from 'react-reveal/Pulse';
 import './style.scss';
 
-function Favorites(props) {
-    const { favoriteCities = [], metric, darkMode } = props;
+export default function Favorites(props) {
+    const dispatch = useDispatch();
+    const favoriteCities = useSelector(state => state.mainReducer.favoriteCities);
+    const metric = useSelector(state => state.mainReducer.metric);
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
     const [isLoader, setIsLoader] = useState(true);
     const [isError, setIsError] = useState(false);
     const [favCitiesInfo, setFavCitiesInfo] = useState({});
 
     function handleCityClick(city) {
-        props.setCity(city);
+        dispatch(setCity(city));
         props.history.push(ROUTES.home)
     }
 
@@ -103,7 +106,7 @@ function Favorites(props) {
                         <DeleteIcon
                             className={'remove_icon'}
                             onClick={() => {
-                                props.removeFavoriteCity(city.key)
+                                dispatch(removeFavoriteCity(city.key))
                             }}
                         />
                     </div>
@@ -142,13 +145,3 @@ function Favorites(props) {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    favoriteCities: state.mainReducer.favoriteCities,
-    cityDetails: state.mainReducer.cityDetails,
-    metric: state.mainReducer.metric,
-    darkMode: state.mainReducer.darkMode
-});
-
-export default connect(mapStateToProps, { setCity, removeFavoriteCity })(Favorites)
-

@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import RainEffect from "../RainEffect";
 import LightningEffect from "../Lightning";
 import './style.scss';
 
-
-function WeatherIcon(props) {
-    const { weatherDescription, darkMode } = props;
+export default function WeatherIcon(props) {
+    const { weatherDescription } = props;
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
     const lightMode = !darkMode ? 'weather_icon_light_mode' : '';
 
     switch (weatherDescription) {
@@ -28,6 +28,7 @@ function WeatherIcon(props) {
         }
         case 'Showers':
         case 'Rain':
+        case 'Light rain':
         case 'Sleet':
         case 'Freezing Rain':
         case 'Partly Cloudy w/ Showers': {
@@ -89,10 +90,3 @@ function WeatherIcon(props) {
         }
     }
 }
-
-const mapStateToProps = state => ({
-    darkMode: state.mainReducer.darkMode,
-});
-
-export default connect(mapStateToProps)(WeatherIcon)
-

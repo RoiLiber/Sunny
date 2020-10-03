@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgress, Button } from '@material-ui/core';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Favorite from '@material-ui/icons/Favorite';
-import { setCityDetails, setFavoriteCities, removeFavoriteCity } from '../../actions/mainActions';
+import { setFavoriteCities, removeFavoriteCity } from '../../actions/mainActions';
 import { updateCurrentCityWeather, updateForecast, fetchAutoCompleteOptions } from '../../api';
 import { ERROR_MSG } from '../../consts';
 import AutoComplete from '../AutoComplete';
@@ -14,8 +14,14 @@ import RainEffect from '../UI/RainEffect';
 import LightningEffect from '../UI/Lightning';
 import './style.scss';
 
-function HomePage(props) {
-    const { city: { key = '', label }, favoriteCities, metric, darkMode } = props;
+export default function HomePage() {
+    const dispatch = useDispatch();
+    const city = useSelector(state => state.mainReducer.city);
+    const cityDetails = useSelector(state => state.mainReducer.cityDetails);
+    const favoriteCities = useSelector(state => state.mainReducer.favoriteCities);
+    const metric = useSelector(state => state.mainReducer.metric);
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
+    const { key = '', label } = city;
     const [isLoader, setIsLoader] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -83,7 +89,7 @@ function HomePage(props) {
     }
 
     function renderFavoriteIcon() {
-        const isCityInFav = !!favoriteCities.find(city => city.key === props.city.key);
+        const isCityInFav = !!favoriteCities.find(favCity => favCity.key === city.key);
 
         return isError ? null
             : isCityInFav
@@ -91,10 +97,10 @@ function HomePage(props) {
                     className={`favorite_icon favorite`}
                     onClick={() => {
                         if (!isCityInFav) {
-                            props.setFavoriteCities(props.city)
+                            dispatch(setFavoriteCities(city))
                         }
                         else {
-                            props.removeFavoriteCity(key)
+                            dispatch(removeFavoriteCity(key))
                         }
                     }}
                 />
@@ -102,16 +108,16 @@ function HomePage(props) {
                     className={`favorite_icon`}
                     onClick={() => {
                         if (!isCityInFav) {
-                            props.setFavoriteCities(props.city)
+                            dispatch(setFavoriteCities(city))
                         }
                         else {
-                            props.removeFavoriteCity(key)
+                            dispatch(removeFavoriteCity(key))
                         }
                     }}
                 />
     }
 
-    const weatherDescription = props.cityDetails.currWeatherInfo.description;
+    const weatherDescription = cityDetails.currWeatherInfo.description;
 
     return (
         <div className={`home_page ${!darkMode ? 'home_page_light_mode' : ''}`}>
@@ -128,13 +134,3 @@ function HomePage(props) {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    city: state.mainReducer.city,
-    cityDetails: state.mainReducer.cityDetails,
-    favoriteCities: state.mainReducer.favoriteCities,
-    metric: state.mainReducer.metric,
-    darkMode: state.mainReducer.darkMode,
-});
-
-export default connect(mapStateToProps, { setCityDetails, setFavoriteCities, removeFavoriteCity })(HomePage)

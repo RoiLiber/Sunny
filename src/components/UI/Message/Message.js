@@ -1,12 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Button } from "@material-ui/core";
 import Pulse from 'react-reveal/Pulse';
-import { setGeoLocationApproval } from '../../../actions/mainActions';
 import './style.scss';
 
-function Header(props) {
-    const { text, btnText, darkMode, onClick } = props;
+export default function Header(props) {
+    const { text, btnText, onClick } = props;
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
 
     return (
         <div className={`message_wrapper ${!darkMode ? 'message_light_mode' : ''}`}>
@@ -27,8 +27,3 @@ function Header(props) {
     )
 }
 
-const mapStateToProps = state => ({
-    darkMode: state.mainReducer.darkMode
-});
-
-export default connect(mapStateToProps, setGeoLocationApproval)(Header)

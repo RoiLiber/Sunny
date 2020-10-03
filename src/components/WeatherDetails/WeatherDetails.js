@@ -1,11 +1,13 @@
 import React from 'react';
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { Fade } from "react-reveal";
 import { imageUrl } from '../../consts';
 import './style.scss';
 
-function WeatherDetails(props) {
-    const { dayDetails, currDay, index, metric, darkMode } = props;
+export default function WeatherDetails(props) {
+    const { dayDetails, currDay, index } = props;
+    const metric = useSelector(state => state.mainReducer.metric);
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
     const { temp, dayTemp, date } = dayDetails;
     const { min: minTemp, max: maxTemp } = temp;
 
@@ -37,9 +39,3 @@ function WeatherDetails(props) {
     )
 }
 
-const mapStateToProps = (state) => ({
-    metric: state.mainReducer.metric,
-    darkMode: state.mainReducer.darkMode
-});
-
-export default connect(mapStateToProps)(WeatherDetails)

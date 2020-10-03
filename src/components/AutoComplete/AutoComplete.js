@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import { TextField, CircularProgress } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 import { SEARCH_ERROR_MSG } from '../../consts';
-import { setCity, setCityDetails } from '../../actions/mainActions';
+import { setCity } from '../../actions/mainActions';
 import { fetchAutoCompleteOptions } from '../../api';
 import colors from '../../styles/colorsVar';
 import './style.scss';
@@ -30,7 +29,9 @@ const styles = () => ({
 const reg = /^[a-zA-Z ]+(-[a-zA-Z ]+)*$/;
 
 function AutoComplete(props) {
-    const { classes, darkMode } = props;
+    const { classes } = props;
+    const dispatch = useDispatch();
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
     const [open, setOpen] = useState(false);
     const [options, setOptions] = useState([]);
     const [isError, setIsError] = useState(false);
@@ -75,7 +76,7 @@ function AutoComplete(props) {
             onClose={() => setOpen(false)}
             onChange={(e, value) => {
                 if (!value) return;
-                props.setCity(value || {})
+                dispatch(setCity(value || {}))
             }}
             value={citySearch}
             onInputChange={handleSearchWordChanged}
@@ -113,11 +114,4 @@ function AutoComplete(props) {
     )
 }
 
-const mapStateToProps = state => ({
-    darkMode: state.mainReducer.darkMode
-});
-
-export default compose(
-  connect(mapStateToProps, { setCity, setCityDetails }),
-  withStyles(styles)
-)(AutoComplete)
+export default withStyles(styles)(AutoComplete)

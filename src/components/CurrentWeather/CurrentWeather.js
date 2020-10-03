@@ -1,11 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { ButtonGroup, Button } from '@material-ui/core';
 import { setTampMetric, setDarkMode } from '../../actions/mainActions';
 import './style.scss';
 
-function CurrentWeather(props) {
-    const { city: { label: cityName, country }, cityDetails, metric, darkMode } = props;
+export default function CurrentWeather() {
+    const dispatch = useDispatch();
+    const city = useSelector(state => state.mainReducer.city);
+    const cityDetails = useSelector(state => state.mainReducer.cityDetails);
+    const metric = useSelector(state => state.mainReducer.metric);
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
+    const { label: cityName, country } = city;
     const { currWeatherInfo } = cityDetails || {};
     const { tempC, tempF, description, img } = currWeatherInfo || {};
     const degree = metric ? tempC : tempF;
@@ -30,13 +35,13 @@ function CurrentWeather(props) {
                 <ButtonGroup disableElevation variant="contained">
                     <Button
                         className={`${metric ? 'active' : ''}`}
-                        onClick={() => props.setTampMetric(true)}
+                        onClick={() => dispatch(setTampMetric(true))}
                     >
                         Celsius
                     </Button>
                     <Button
                         className={`${!metric ? 'active' : ''}`}
-                        onClick={() => props.setTampMetric(false)}
+                        onClick={() => dispatch(setTampMetric(false))}
                     >
                         Fahrenheit
                     </Button>
@@ -46,13 +51,13 @@ function CurrentWeather(props) {
                 <ButtonGroup disableElevation variant="contained">
                     <Button
                         className={`${darkMode ? 'active' : ''}`}
-                        onClick={() => props.setDarkMode(true)}
+                        onClick={() => dispatch(setDarkMode(true))}
                     >
                         Dark
                     </Button>
                     <Button
                         className={`${!darkMode ? 'active' : ''}`}
-                        onClick={() => props.setDarkMode(false)}
+                        onClick={() => dispatch(setDarkMode(false))}
                     >
                         Light
                     </Button>
@@ -61,12 +66,3 @@ function CurrentWeather(props) {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    city: state.mainReducer.city,
-    cityDetails: state.mainReducer.cityDetails,
-    metric: state.mainReducer.metric,
-    darkMode: state.mainReducer.darkMode
-});
-
-export default connect(mapStateToProps, { setTampMetric, setDarkMode })(CurrentWeather)

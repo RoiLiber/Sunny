@@ -13,7 +13,7 @@ export default function Rain(level) {
         return { left: leftPx, top: topPx }
     }
 
-    return(
+    return (
         <div className='visualisation-container'>
             <div className={`rain_effect ${level === 3 ? 'blnk' : ''}`}>
                 {[...Array(50 * level)].map((el, index) => <i key={index} style={iStyle()}/>)}

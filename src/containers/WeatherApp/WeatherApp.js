@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ROUTES } from '../../consts';
 import { setGeoLocationApproval } from '../../actions/mainActions';
@@ -9,14 +9,17 @@ import Favorites from '../../components/Favorites';
 import Message from "../../components/UI/Message/Message";
 import './style.scss';
 
-function WeatherApp(props) {
-    const { geoLocation, darkMode } = props;
+export default function WeatherApp() {
+    const dispatch = useDispatch();
+    const geoLocation = useSelector(state => state.mainReducer.geoLocation);
+    const darkMode = useSelector(state => state.mainReducer.darkMode);
+    const messageText = 'Sunny want to know your location, can we?';
 
     return (
         <div className={`weather_container ${!darkMode ? 'weather_container_light_mode' : ''}`}>
             <Header/>
             {geoLocation !== true
-                ? <Message text={'Sunny want to know your location, can we?'} btnText={'Approve'} onClick={() => props.setGeoLocationApproval(true)}/>
+                ? <Message text={messageText} btnText={'Approve'} onClick={() => dispatch(setGeoLocationApproval(true))}/>
                 : <Switch>
                     <Route exect path={ROUTES.home} component={HomePage}/>
                     <Route exect path={ROUTES.favorites} component={Favorites}/>
@@ -25,12 +28,5 @@ function WeatherApp(props) {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    darkMode: state.mainReducer.darkMode,
-    geoLocation: state.mainReducer.geoLocation
-});
-
-export default connect(mapStateToProps, { setGeoLocationApproval })(WeatherApp)
 
 
