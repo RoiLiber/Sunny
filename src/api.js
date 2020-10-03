@@ -4,7 +4,7 @@ import { weatherUrl, geoLocationUrl, imageUrl, API_KEY, API_GEOLOCATION_KEY } fr
 import { get, lowerCase } from 'lodash';
 
 async function fetchCityWeather(key) {
-  const response = await fetch(`${weatherUrl}currentconditions/v1/${key}?apikey=${API_KEY}`);
+  const response = await fetch(`${weatherUrl}/currentconditions/v1/${key}?apikey=${API_KEY}`);
   const currentWeatherDetails = await response.json();
   const { WeatherText, Temperature, WeatherIcon } = currentWeatherDetails[0] || [];
   const weatherImage = WeatherIcon && `${imageUrl}/${WeatherIcon.toString().padStart(2, '0')}-s.png`;
@@ -24,7 +24,7 @@ async function updateCurrentCityWeather(key) {
 }
 
 async function geoLocationCity() {
-  const response = await fetch(`${geoLocationUrl}check?access_key=${API_GEOLOCATION_KEY}`);
+  const response = await fetch(`${geoLocationUrl}/check?access_key=${API_GEOLOCATION_KEY}`);
   const geo = await response.json();
   const { city } = geo || {};
 
@@ -38,14 +38,14 @@ async function geoLocationCity() {
 }
 
 async function fetchAutoCompleteOptions(value) {
-  const response = await fetch(`${weatherUrl}locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${value}`);
+  const response = await fetch(`${weatherUrl}/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${value}`);
   const cities = await response.json();
 
   return cities
 }
 
 async function fetchForecastDetails(key, metricBool) {
-  const response = await fetch(`${weatherUrl}forecasts/v1/daily/5day/${key}?apikey=${API_KEY}&metric=${metricBool}`);
+  const response = await fetch(`${weatherUrl}/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}&metric=${metricBool}`);
   const forecast = await response.json();
   const { DailyForecasts } = forecast || {};
 

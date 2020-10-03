@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 import types from '../actions/actionTypes';
-// import { DEFAULT_LOCATION } from '../consts';
+import { DEFAULT_LOCATION } from '../consts';
 import Immutable from 'seamless-immutable';
 
 const favoritesCity = localStorage.getItem('favorites');
