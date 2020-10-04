@@ -12,7 +12,7 @@ const ROUTES = {
   favorites: '/favorites',
 };
 
-const API_KEY = process.env.REACT_APP_API_KEY || 'eZGdLhG7Pl29eXhg6gf51PSwfNBncw7a';
+const API_KEY = process.env.REACT_APP_API_KEY || '2AfPTxkMmqWAYurUBl7M0mlAfYPio14s';
 
 export {
   weatherUrl,
