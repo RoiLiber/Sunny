@@ -23,7 +23,7 @@ https://roiliber.github.io/Sunny/
 ## Download & Run
 Run the following commands
 ```
-  git clone https://github.com/RoiLiber/Craft-and-Mix.git RoiLiber
+  git clone https://github.com/RoiLiber/Sunny.git RoiLiber
   cd RoiLiber
   npm i
   npm start
